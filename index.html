@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diseño Civil Sustentable | DICSA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #1BB8C5; --teal-d: #148fa0; --teal-l: #5dd6e0;
+      --ink: #0d1117; --ink-2: #1a2230; --white: #ffffff; --smoke: #8fa0b0;
+      --radius: 4px;
+      --ff-head: 'Bebas Neue', sans-serif;
+      --ff-body: 'DM Sans', sans-serif;
+      --ff-mono: 'DM Mono', monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--ff-body); background: var(--ink); color: var(--white); overflow-x: hidden; line-height: 1.6; }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--ink); }
+    ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
+
+    @keyframes fadeUp { from { opacity:0; transform:translateY(32px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @keyframes ticker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+    @keyframes pulse-dot { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* NAV */
+    nav#main-nav {
+      position:fixed; top:0; left:0; right:0; z-index:100;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 clamp(1.5rem,5vw,4rem); height:64px;
+      background:rgba(13,17,23,0.92); backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(27,184,197,0.15); transition:border-color 0.3s;
+    }
+    .nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+    .nav-logo-icon { width:36px; height:36px; background:var(--teal); border-radius:var(--radius); display:grid; place-items:center; font-family:var(--ff-head); font-size:1.1rem; color:var(--ink); }
+    .nav-logo-text { font-family:var(--ff-head); font-size:1.15rem; letter-spacing:1px; color:var(--white); }
+    .nav-logo-text span { color:var(--teal); }
+    .nav-links { display:flex; gap:2rem; list-style:none; }
+    .nav-links a { text-decoration:none; color:var(--smoke); font-size:0.8rem; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--teal); }
+    .nav-cta { background:var(--teal) !important; color:var(--ink) !important; padding:0.45rem 1.1rem; border-radius:var(--radius); font-weight:600 !important; }
+    .nav-cta:hover { background:var(--teal-l) !important; }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+    .hamburger span { width:22px; height:2px; background:var(--white); border-radius:2px; }
+
+    /* TICKER */
+    .ticker-wrap { margin-top:64px; background:var(--teal); overflow:hidden; padding:0.55rem 0; }
+    .ticker-track { display:flex; width:max-content; animation:ticker 40s linear infinite; }
+    .ticker-track span { font-family:var(--ff-mono); font-size:0.7rem; color:var(--ink); font-weight:500; letter-spacing:2px; text-transform:uppercase; padding:0 2rem; white-space:nowrap; }
+    .ticker-sep { color:rgba(13,17,23,0.35) !important; }
+
+    /* HERO */
+    #hero { position:relative; min-height:92vh; display:flex; align-items:center; padding:clamp(4rem,10vw,8rem) clamp(1.5rem,6vw,5rem); overflow:hidden; }
+    .hero-grid-bg { position:absolute; inset:0; background-image:linear-gradient(rgba(27,184,197,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(27,184,197,0.07) 1px,transparent 1px); background-size:60px 60px; mask-image:radial-gradient(ellipse 80% 80% at 50% 0%,black 40%,transparent 100%); }
+    .hero-glow { position:absolute; width:600px; height:600px; background:radial-gradient(circle,rgba(27,184,197,0.18) 0%,transparent 70%); top:-100px; left:-100px; pointer-events:none; }
+    .hero-content { position:relative; z-index:2; max-width:820px; }
+    .hero-eyebrow { display:flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem; animation:fadeIn 0.8s ease forwards; }
+    .hero-eyebrow .dot { width:8px; height:8px; background:var(--teal); border-radius:50%; animation:pulse-dot 2s ease infinite; }
+    .hero-eyebrow span { font-family:var(--ff-mono); font-size:0.72rem; letter-spacing:3px; text-transform:uppercase; color:var(--teal); }
+    .hero-title { font-family:var(--ff-head); font-size:clamp(3.5rem,9vw,8rem); line-height:0.95; letter-spacing:1px; animation:fadeUp 0.9s 0.1s ease both; }
+    .hero-title .accent { color:var(--teal); }
+    .hero-subtitle { margin-top:1.75rem; font-size:clamp(1rem,2vw,1.2rem); color:var(--smoke); max-width:540px; font-weight:300; line-height:1.7; animation:fadeUp 0.9s 0.25s ease both; }
+    .hero-actions { margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap; animation:fadeUp 0.9s 0.4s ease both; }
+    .btn-primary { background:var(--teal); color:var(--ink); padding:0.85rem 2rem; border-radius:var(--radius); font-weight:600; text-decoration:none; font-size:0.9rem; transition:background 0.2s,transform 0.15s; display:inline-block; }
+    .btn-primary:hover { background:var(--teal-l); transform:translateY(-2px); }
+    .btn-outline { border:1px solid rgba(27,184,197,0.4); color:var(--teal); padding:0.85rem 2rem; border-radius:var(--radius); font-weight:500; text-decoration:none; font-size:0.9rem; transition:border-color 0.2s,background 0.2s; display:inline-block; }
+    .btn-outline:hover { border-color:var(--teal); background:rgba(27,184,197,0.07); }
+
+    /* SOCIAL BAR */
+    .social-bar { display:flex; align-items:center; gap:0.6rem; margin-top:2rem; flex-wrap:wrap; animation:fadeUp 0.9s 0.5s ease both; }
+    .social-btn { display:flex; align-items:center; gap:0.5rem; padding:0.55rem 1rem; border-radius:var(--radius); text-decoration:none; font-size:0.78rem; font-weight:500; border:1px solid rgba(255,255,255,0.1); color:var(--smoke); transition:all 0.2s; }
+    .social-btn svg { width:16px; height:16px; flex-shrink:0; }
+    .social-btn.fb:hover { background:#1877F2; border-color:#1877F2; color:#fff; }
+    .social-btn.ig:hover { background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); border-color:transparent; color:#fff; }
+    .social-btn.wa:hover { background:#25D366; border-color:#25D366; color:var(--ink); }
+    .social-btn.li:hover { background:#0A66C2; border-color:#0A66C2; color:#fff; }
+
+    /* HERO STATS */
+    .hero-stats { margin-top:3.5rem; display:flex; gap:3rem; flex-wrap:wrap; animation:fadeUp 0.9s 0.6s ease both; }
+    .stat-num { font-family:var(--ff-head); font-size:2.6rem; color:var(--teal); line-height:1; }
+    .stat-label { font-size:0.75rem; color:var(--smoke); letter-spacing:1.5px; text-transform:uppercase; margin-top:0.25rem; }
+
+    /* SECTION CHROME */
+    section { padding:clamp(4rem,9vw,7rem) clamp(1.5rem,6vw,5rem); }
+    .section-label { font-family:var(--ff-mono); font-size:0.68rem; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:0.75rem; }
+    .section-title { font-family:var(--ff-head); font-size:clamp(2.2rem,5vw,4rem); line-height:1; letter-spacing:0.5px; }
+    .section-desc { margin-top:1rem; color:var(--smoke); font-size:1rem; font-weight:300; max-width:560px; line-height:1.75; }
+    .divider { height:1px; background:rgba(27,184,197,0.12); }
+
+    /* NOSOTROS */
+    #nosotros { background:var(--ink-2); }
+    .nosotros-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; margin-top:3.5rem; align-items:start; }
+    .mission-block { padding:2rem; border:1px solid rgba(27,184,197,0.15); border-radius:var(--radius); background:rgba(27,184,197,0.03); margin-bottom:1.5rem; }
+    .mission-block h3 { font-family:var(--ff-head); font-size:1.1rem; letter-spacing:1px; color:var(--teal); margin-bottom:0.6rem; }
+    .mission-block p { font-size:0.9rem; color:var(--smoke); line-height:1.75; font-weight:300; }
+    .valores-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .valor-card { padding:1.25rem 1.5rem; border-left:2px solid var(--teal); background:rgba(255,255,255,0.02); }
+    .valor-card strong { display:block; font-size:0.82rem; font-weight:600; color:var(--white); margin-bottom:0.3rem; }
+    .valor-card span { font-size:0.78rem; color:var(--smoke); font-weight:300; }
+
+    /* PROYECTOS */
+    #proyectos { background:var(--ink); }
+    .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:3.5rem; border:1px solid rgba(27,184,197,0.12); border-radius:var(--radius); overflow:hidden; }
+    .project-card { position:relative; overflow:hidden; aspect-ratio:4/3; background:var(--ink-2); }
+    .project-card img { width:100%; height:100%; object-fit:cover; opacity:0.55; transition:opacity 0.4s,transform 0.5s; }
+    .project-card:hover img { opacity:0.8; transform:scale(1.04); }
+    .project-card-body { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; background:linear-gradient(to top,rgba(13,17,23,0.9) 0%,transparent 60%); }
+    .project-tag { font-family:var(--ff-mono); font-size:0.6rem; letter-spacing:2px; text-transform:uppercase; color:var(--teal); margin-bottom:0.3rem; }
+    .project-name { font-family:var(--ff-head); font-size:1.4rem; letter-spacing:0.5px; line-height:1.1; }
+    .project-location { font-size:0.75rem; color:var(--smoke); margin-top:0.3rem; }
+    .projects-large { display:grid; grid-template-columns:2fr 1fr; gap:1px; margin-top:1px; }
+    .project-card.tall { aspect-ratio:16/7; }
+
+    /* SERVICIOS */
+    #servicios { background:var(--ink-2); }
+    .services-layout { display:grid; grid-template-columns:1fr 2fr; gap:5rem; margin-top:3.5rem; align-items:start; }
+    .services-intro p { color:var(--smoke); font-size:0.9rem; line-height:1.75; font-weight:300; margin-top:1rem; }
+    .big-num { font-family:var(--ff-head); font-size:6rem; color:rgba(27,184,197,0.12); line-height:1; margin-bottom:-1rem; }
+    .services-list { display:grid; grid-template-columns:1fr 1fr; border:1px solid rgba(27,184,197,0.12); border-radius:var(--radius); overflow:hidden; }
+    .service-item { display:flex; align-items:flex-start; gap:1rem; padding:1.4rem 1.6rem; border-bottom:1px solid rgba(27,184,197,0.08); border-right:1px solid rgba(27,184,197,0.08); transition:background 0.25s; }
+    .service-item:hover { background:rgba(27,184,197,0.04); }
+    .service-item:nth-child(even) { border-right:none; }
+    .service-item.full { grid-column:1 / -1; border-right:none; }
+    .service-icon { width:36px; height:36px; min-width:36px; background:rgba(27,184,197,0.1); border-radius:var(--radius); display:grid; place-items:center; font-size:1rem; }
+    .service-text strong { display:block; font-size:0.82rem; font-weight:600; color:var(--white); margin-bottom:0.2rem; }
+    .service-text span { font-size:0.74rem; color:var(--smoke); font-weight:300; }
+
+    /* SECTORES */
+    #clientes { background:var(--ink); }
+    .sectors-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3.5rem; }
+    .sector-card { padding:2rem 1.5rem; border:1px solid rgba(27,184,197,0.12); border-radius:var(--radius); text-align:center; transition:border-color 0.25s,background 0.25s; }
+    .sector-card:hover { border-color:rgba(27,184,197,0.4); background:rgba(27,184,197,0.03); }
+    .sector-icon { font-size:2rem; margin-bottom:0.75rem; }
+    .sector-card h4 { font-family:var(--ff-head); font-size:1.1rem; letter-spacing:0.5px; color:var(--white); }
+    .sector-card p { font-size:0.76rem; color:var(--smoke); margin-top:0.4rem; line-height:1.5; }
+    .clients-strip { margin-top:3rem; display:flex; gap:1.5rem; flex-wrap:wrap; }
+    .client-pill { padding:0.65rem 1.4rem; border:1px solid rgba(27,184,197,0.2); border-radius:100px; font-size:0.8rem; color:var(--smoke); transition:border-color 0.2s,color 0.2s; }
+    .client-pill:hover { border-color:var(--teal); color:var(--white); }
+
+    /* CONTACTO */
+    #contacto { background:var(--ink-2); position:relative; overflow:hidden; }
+    .contact-glow { position:absolute; width:500px; height:500px; background:radial-gradient(circle,rgba(27,184,197,0.1) 0%,transparent 70%); bottom:-150px; right:-100px; pointer-events:none; }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; margin-top:3.5rem; align-items:start; position:relative; z-index:1; }
+    .contact-info p { color:var(--smoke); font-size:0.9rem; line-height:1.75; margin-top:1rem; font-weight:300; max-width:380px; }
+    .contact-items { margin-top:2rem; display:flex; flex-direction:column; gap:1.25rem; }
+    .contact-item { display:flex; align-items:center; gap:1rem; }
+    .contact-item-icon { width:42px; height:42px; background:rgba(27,184,197,0.1); border:1px solid rgba(27,184,197,0.2); border-radius:var(--radius); display:grid; place-items:center; font-size:1rem; flex-shrink:0; }
+    .contact-item-text strong { display:block; font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:var(--teal); font-family:var(--ff-mono); }
+    .contact-item-text span, .contact-item-text a { font-size:0.9rem; color:var(--white); text-decoration:none; transition:color 0.2s; }
+    .contact-item-text a:hover { color:var(--teal); }
+    .contact-form { display:flex; flex-direction:column; gap:1rem; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .form-group { display:flex; flex-direction:column; gap:0.4rem; }
+    .form-group label { font-size:0.7rem; letter-spacing:1.5px; text-transform:uppercase; color:var(--smoke); font-family:var(--ff-mono); }
+    .form-group input, .form-group select, .form-group textarea { background:rgba(255,255,255,0.04); border:1px solid rgba(27,184,197,0.18); border-radius:var(--radius); padding:0.75rem 1rem; color:var(--white); font-family:var(--ff-body); font-size:0.88rem; outline:none; transition:border-color 0.2s; width:100%; }
+    .form-group input::placeholder, .form-group textarea::placeholder { color:var(--smoke); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color:var(--teal); }
+    .form-group select { appearance:none; cursor:pointer; }
+    .form-group select option { background:var(--ink); }
+    .form-group textarea { resize:vertical; min-height:110px; }
+    .form-submit { background:var(--teal); color:var(--ink); border:none; padding:0.9rem 2rem; border-radius:var(--radius); font-family:var(--ff-body); font-weight:600; font-size:0.9rem; cursor:pointer; transition:background 0.2s,transform 0.15s; align-self:flex-start; }
+    .form-submit:hover { background:var(--teal-l); transform:translateY(-2px); }
+
+    /* FOOTER */
+    footer { background:var(--ink); border-top:1px solid rgba(27,184,197,0.1); padding:2rem clamp(1.5rem,6vw,5rem); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+    .f-brand { font-family:var(--ff-head); font-size:1rem; letter-spacing:1px; color:var(--smoke); }
+    .f-brand span { color:var(--teal); }
+    footer p { font-size:0.72rem; color:var(--smoke); font-family:var(--ff-mono); }
+    .footer-right { display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap; }
+    .footer-social a { color:var(--smoke); transition:color 0.2s; display:inline-flex; }
+    .footer-social a:hover { color:var(--teal); }
+    .footer-nav a { font-size:0.72rem; color:var(--smoke); text-decoration:none; transition:color 0.2s; }
+    .footer-nav a:hover { color:var(--teal); }
+
+    /* WHATSAPP FLOAT */
+    .wa-float { position:fixed; bottom:28px; right:28px; z-index:200; display:flex; align-items:center; gap:0.6rem; background:#25D366; color:var(--ink); padding:0.75rem 1.4rem; border-radius:100px; text-decoration:none; font-weight:600; font-size:0.85rem; box-shadow:0 4px 24px rgba(37,211,102,0.35); transition:transform 0.2s,box-shadow 0.2s; animation:fadeUp 1s 1s ease both; }
+    .wa-float:hover { transform:translateY(-3px); box-shadow:0 8px 32px rgba(37,211,102,0.45); }
+    .wa-float svg { width:20px; height:20px; }
+
+    /* RESPONSIVE */
+    @media (max-width:1024px) {
+      .nosotros-grid { grid-template-columns:1fr; gap:3rem; }
+      .services-layout { grid-template-columns:1fr; gap:2.5rem; }
+      .sectors-grid { grid-template-columns:repeat(2,1fr); }
+      .contact-grid { grid-template-columns:1fr; gap:3rem; }
+      .projects-large { grid-template-columns:1fr; }
+    }
+    @media (max-width:768px) {
+      .nav-links { display:none; }
+      .hamburger { display:flex; }
+      .projects-grid { grid-template-columns:1fr; }
+      .services-list { grid-template-columns:1fr; }
+      .service-item:nth-child(even) { border-right:none; }
+      .service-item.full { grid-column:1; }
+      .sectors-grid { grid-template-columns:1fr 1fr; }
+      .valores-grid { grid-template-columns:1fr; }
+      .form-row { grid-template-columns:1fr; }
+    }
+    @media (max-width:480px) {
+      .sectors-grid { grid-template-columns:1fr; }
+      .hero-actions, .social-bar { flex-direction:column; align-items:flex-start; }
+      footer { flex-direction:column; align-items:flex-start; }
+      .wa-float span { display:none; }
+      .wa-float { padding:0.85rem; border-radius:50%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-icon">DC</div>
+    <div class="nav-logo-text">DISEÑO <span>CIVIL</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#clientes">Sectores</a></li>
+    <li><a href="#contacto" class="nav-cta">Cotizar</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span>Obra Civil</span><span class="ticker-sep">///</span>
+    <span>Estructura Metalica</span><span class="ticker-sep">///</span>
+    <span>Instalaciones Electricas</span><span class="ticker-sep">///</span>
+    <span>Terrecerias</span><span class="ticker-sep">///</span>
+    <span>Sistemas de Drenaje</span><span class="ticker-sep">///</span>
+    <span>Sector Energetico</span><span class="ticker-sep">///</span>
+    <span>Agua Potable</span><span class="ticker-sep">///</span>
+    <span>Proyecto Ejecutivo</span><span class="ticker-sep">///</span>
+    <span>Mantenimiento Industrial</span><span class="ticker-sep">///</span>
+    <span>Renta de Maquinaria</span><span class="ticker-sep">///</span>
+    <span>Venta Maquinaria Amarilla</span><span class="ticker-sep">///</span>
+    <span>Topografia y Fotogrametria</span><span class="ticker-sep">///</span>
+    <span>Diseno Arquitectonico</span><span class="ticker-sep">///</span>
+    <span>Analisis Estructural</span><span class="ticker-sep">///</span>
+    <span>Construccion Habitacional</span><span class="ticker-sep">///</span>
+    <span>Obra Civil</span><span class="ticker-sep">///</span>
+    <span>Estructura Metalica</span><span class="ticker-sep">///</span>
+    <span>Instalaciones Electricas</span><span class="ticker-sep">///</span>
+    <span>Terrecerias</span><span class="ticker-sep">///</span>
+    <span>Sistemas de Drenaje</span><span class="ticker-sep">///</span>
+    <span>Sector Energetico</span><span class="ticker-sep">///</span>
+    <span>Agua Potable</span><span class="ticker-sep">///</span>
+    <span>Proyecto Ejecutivo</span><span class="ticker-sep">///</span>
+    <span>Mantenimiento Industrial</span><span class="ticker-sep">///</span>
+    <span>Renta de Maquinaria</span><span class="ticker-sep">///</span>
+    <span>Venta Maquinaria Amarilla</span><span class="ticker-sep">///</span>
+    <span>Topografia y Fotogrametria</span><span class="ticker-sep">///</span>
+    <span>Diseno Arquitectonico</span><span class="ticker-sep">///</span>
+    <span>Analisis Estructural</span><span class="ticker-sep">///</span>
+    <span>Construccion Habitacional</span><span class="ticker-sep">///</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="dot"></div>
+      <span>Hermosillo, Sonora - Mexico</span>
+    </div>
+    <h1 class="hero-title">DISENO<br/>CIVIL <span class="accent">SUSTENTABLE</span></h1>
+    <p class="hero-subtitle">Construccion y mantenimiento industrial y residencial. Desarrollamos infraestructura con tecnologia de ultima generacion para optimizar operaciones y garantizar crecimiento sostenible.</p>
+    <div class="hero-actions">
+      <a href="#servicios" class="btn-primary">Ver Servicios</a>
+      <a href="#contacto" class="btn-outline">Solicitar Cotizacion</a>
+    </div>
+    <div class="social-bar">
+      <a href="https://www.facebook.com/disenocivil.sustentable" target="_blank" rel="noopener" class="social-btn fb">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        Facebook
+      </a>
+      <a href="https://www.instagram.com/soy_el_constructor" target="_blank" rel="noopener" class="social-btn ig">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @soy_el_constructor
+      </a>
+      <a href="https://wa.me/525649470698?text=Hola%2C%20me%20interesa%20cotizar%20un%20proyecto%20con%20DICSA" target="_blank" rel="noopener" class="social-btn wa">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.852L.057 23.5l5.797-1.52A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.498-5.2-1.37l-.373-.22-3.44.902.918-3.352-.243-.386A9.937 9.937 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://www.linkedin.com/company/dicsa-mx" target="_blank" rel="noopener" class="social-btn li">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">+900</div>
+        <div class="stat-label">MDP en proyectos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">22+</div>
+        <div class="stat-label">Especialidades</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Megaproyectos Nacionales</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="section-label reveal">01 &mdash; Nosotros</div>
+  <h2 class="section-title reveal">Quienes Somos</h2>
+  <div class="nosotros-grid">
+    <div>
+      <div class="mission-block reveal">
+        <h3>Mision</h3>
+        <p>Desarrollar e implementar soluciones que optimicen las operaciones de nuestros clientes, incrementen su eficiencia y aseguren su crecimiento mediante la infraestructura mas actual en un mundo en constante evolucion.</p>
+      </div>
+      <div class="mission-block reveal">
+        <h3>Vision</h3>
+        <p>Ser el socio constructor-tecnologico preferido y de confianza para empresas que buscan innovacion y excelencia, liderando la transformacion digital y la creacion de valor sostenible.</p>
+      </div>
+    </div>
+    <div>
+      <p class="section-label reveal" style="margin-bottom:1.25rem;">Nuestros Valores</p>
+      <div class="valores-grid">
+        <div class="valor-card reveal">
+          <strong>Innovacion</strong>
+          <span>Buscamos constantemente las ultimas tendencias y tecnologias.</span>
+        </div>
+        <div class="valor-card reveal">
+          <strong>Excelencia</strong>
+          <span>Nos comprometemos con la calidad y los resultados superiores.</span>
+        </div>
+        <div class="valor-card reveal">
+          <strong>Integridad</strong>
+          <span>Actuamos con honestidad y transparencia en todo momento.</span>
+        </div>
+        <div class="valor-card reveal">
+          <strong>Colaboracion</strong>
+          <span>Trabajamos de la mano con nuestros clientes para lograr sus objetivos.</span>
+        </div>
+        <div class="valor-card reveal" style="grid-column:1/-1;">
+          <strong>Orientacion al Cliente</strong>
+          <span>Tus necesidades son nuestra prioridad en cada etapa del proyecto.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PROYECTOS -->
+<section id="proyectos">
+  <div class="section-label reveal">02 &mdash; Proyectos</div>
+  <h2 class="section-title reveal">Obras Destacadas</h2>
+  <p class="section-desc reveal">Participacion directa en proyectos de gran envergadura a nivel nacional e industrial en Sonora y Mexico.</p>
+  <div class="projects-grid reveal">
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=600&q=80" alt="Refineria Dos Bocas" loading="lazy" />
+      <div class="project-card-body">
+        <div class="project-tag">Energia &middot; Tabasco</div>
+        <div class="project-name">Refineria Dos Bocas</div>
+        <div class="project-location">Paraiso, Tabasco</div>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="NAICM" loading="lazy" />
+      <div class="project-card-body">
+        <div class="project-tag">Infraestructura &middot; CDMX</div>
+        <div class="project-name">NAICM Texcoco</div>
+        <div class="project-location">Estado de Mexico</div>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Heineken" loading="lazy" />
+      <div class="project-card-body">
+        <div class="project-tag">Industrial &middot; Sonora</div>
+        <div class="project-name">Heineken Navojoa</div>
+        <div class="project-location">Navojoa, Sonora</div>
+      </div>
+    </div>
+  </div>
+  <div class="projects-large reveal">
+    <div class="project-card tall">
+      <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80" alt="Bachoco Caborca" loading="lazy" />
+      <div class="project-card-body">
+        <div class="project-tag">Agroindustrial &middot; +900 MDP</div>
+        <div class="project-name">Planta Bachoco &mdash; Caborca</div>
+        <div class="project-location">Caborca, Sonora &mdash; Desarrollo y construccion integral</div>
+      </div>
+    </div>
+    <div class="project-card tall">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Woolworth Guaymas" loading="lazy" />
+      <div class="project-card-body">
+        <div class="project-tag">Comercial &middot; Sonora</div>
+        <div class="project-name">Woolworth Guaymas</div>
+        <div class="project-location">Guaymas, Sonora</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="section-label reveal">03 &mdash; Servicios</div>
+  <div class="services-layout">
+    <div class="services-intro">
+      <h2 class="section-title reveal">Nuestros<br/>Servicios</h2>
+      <p class="reveal">Capacidad multidisciplinaria para desarrollar proyectos desde su concepcion hasta su entrega, adaptando cada solucion a las necesidades de cada industria.</p>
+      <div class="big-num reveal">22+</div>
+    </div>
+    <div class="services-list reveal">
+      <div class="service-item">
+        <div class="service-icon">&#127959;</div>
+        <div class="service-text"><strong>Obra Civil Industrial</strong><span>Naves, cimentaciones y estructuras de concreto</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#9881;</div>
+        <div class="service-text"><strong>Estructura Metalica</strong><span>Diseno y montaje de marcos rigidos y estructuras aligeradas</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#9889;</div>
+        <div class="service-text"><strong>Sistemas Electricos</strong><span>Baja y media tension, tableros y tendido de red</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#128293;</div>
+        <div class="service-text"><strong>Instalaciones de Gas</strong><span>Diseno y verificacion en baja y alta presion</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#127754;</div>
+        <div class="service-text"><strong>Drenaje y Agua Potable</strong><span>Exploracion, almacenamiento y transporte</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#127981;</div>
+        <div class="service-text"><strong>Complejos Industriales</strong><span>Desarrollo llave en mano adaptado a cada industria</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#127807;</div>
+        <div class="service-text"><strong>Terrecerias</strong><span>Movimiento de tierra, nivelacion y preparacion de terreno</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#10052;</div>
+        <div class="service-text"><strong>Sistemas de Enfriamiento</strong><span>Mantenimiento de chillers y plantas de frio industrial</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#128267;</div>
+        <div class="service-text"><strong>Energia de Emergencia</strong><span>Instalacion de grupos electrogenos y plantas de respaldo</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#128167;</div>
+        <div class="service-text"><strong>Rebombeo a Presion</strong><span>Sistemas de bombeo y distribucion hidraulica</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#128196;</div>
+        <div class="service-text"><strong>Proyecto Ejecutivo</strong><span>Catalogo de conceptos, planos y memorias de calculo</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#128663;</div>
+        <div class="service-text"><strong>Renta de Maquinaria Ligera</strong><span>Compactadoras, vibradores, andamios y equipo ligero</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#129683;</div>
+        <div class="service-text"><strong>Venta Maquinaria Amarilla</strong><span>Retroexcavadoras, motoniveladoras y equipo pesado</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#128247;</div>
+        <div class="service-text"><strong>Remodelacion de Espacios</strong><span>Interiores comerciales, industriales y residenciales</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#127968;</div>
+        <div class="service-text"><strong>Construccion Habitacional</strong><span>Casas y desarrollos residenciales desde cimentacion hasta entrega</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#128207;</div>
+        <div class="service-text"><strong>Diseno Arquitectonico</strong><span>Anteproyecto, planos ejecutivos, renders 3D y licencias</span></div>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">&#128300;</div>
+        <div class="service-text"><strong>Revision y Analisis Estructural</strong><span>Dictamenes, memorias de calculo, ETABS, NTCS-2022 y AISC</span></div>
+      </div>
+      <div class="service-item full">
+        <div class="service-icon">&#128225;</div>
+        <div class="service-text"><strong>Topografia, Levantamientos, Replanteo y Fotogrametria</strong><span>Levantamientos topograficos, replanteo de obra, modelos digitales de terreno y vuelos drone con procesamiento fotogrametrico</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SECTORES -->
+<section id="clientes">
+  <div class="section-label reveal">04 &mdash; Sectores</div>
+  <h2 class="section-title reveal">Industrias que Atendemos</h2>
+  <div class="sectors-grid">
+    <div class="sector-card reveal">
+      <div class="sector-icon">&#9889;</div>
+      <h4>Sector Energetico</h4>
+      <p>Refineria, subestaciones electricas, gasoductos y plantas de generacion</p>
+    </div>
+    <div class="sector-card reveal">
+      <div class="sector-icon">&#127981;</div>
+      <h4>Agroindustrial</h4>
+      <p>Granjas, plantas de proceso y almacenamiento de productos alimenticios</p>
+    </div>
+    <div class="sector-card reveal">
+      <div class="sector-icon">&#127970;</div>
+      <h4>Manufactura</h4>
+      <p>Expansion, modernizacion y mantenimiento de plantas manufactureras</p>
+    </div>
+    <div class="sector-card reveal">
+      <div class="sector-icon">&#127968;</div>
+      <h4>Residencial y Comercial</h4>
+      <p>Casas, tiendas, centros comerciales y remodelaciones de alta calidad</p>
+    </div>
+  </div>
+  <div style="margin-top:3rem;" class="reveal">
+    <p class="section-label" style="margin-bottom:1rem;">Clientes que han confiado en nosotros</p>
+    <div class="clients-strip">
+      <div class="client-pill">Bachoco</div>
+      <div class="client-pill">Heineken</div>
+      <div class="client-pill">Woolworth</div>
+      <div class="client-pill">Refineria Dos Bocas</div>
+      <div class="client-pill">NAICM</div>
+      <div class="client-pill">Maseca / Grupo Gruma</div>
+      <div class="client-pill">Clientes Particulares Sonora</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contact-glow"></div>
+  <div class="section-label reveal">05 &mdash; Contacto</div>
+  <h2 class="section-title reveal">Trabajemos Juntos</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p class="reveal">Estamos a tus ordenes para cualquier cotizacion. Contactanos directamente o envianos los detalles de tu proyecto y te respondemos a la brevedad.</p>
+      <div class="contact-items">
+        <div class="contact-item reveal">
+          <div class="contact-item-icon">&#128100;</div>
+          <div class="contact-item-text">
+            <strong>Responsable</strong>
+            <span>Ing. Mario Armando Lopez Sanchez</span>
+          </div>
+        </div>
+        <div class="contact-item reveal">
+          <div class="contact-item-icon">&#128222;</div>
+          <div class="contact-item-text">
+            <strong>Telefono</strong>
+            <span><a href="tel:5649470698">564 947 0698</a></span>
+          </div>
+        </div>
+        <div class="contact-item reveal">
+          <div class="contact-item-icon">&#9993;</div>
+          <div class="contact-item-text">
+            <strong>Correo DICSA</strong>
+            <span><a href="mailto:contactodicsa@gmail.com">contactodicsa@gmail.com</a></span>
+          </div>
+        </div>
+        <div class="contact-item reveal">
+          <div class="contact-item-icon">&#9993;</div>
+          <div class="contact-item-text">
+            <strong>Correo Ingeniero</strong>
+            <span><a href="mailto:ingmarioarmandolopez@gmail.com">ingmarioarmandolopez@gmail.com</a></span>
+          </div>
+        </div>
+        <div class="contact-item reveal">
+          <div class="contact-item-icon">&#128205;</div>
+          <div class="contact-item-text">
+            <strong>Ubicacion</strong>
+            <span>Hermosillo, Sonora, Mexico</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" placeholder="Razon social o nombre" />
+        </div>
+        <div class="form-group">
+          <label>Telefono</label>
+          <input type="tel" placeholder="+52 000 000 0000" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Correo Electronico</label>
+        <input type="email" placeholder="empresa@correo.com" />
+      </div>
+      <div class="form-group">
+        <label>Servicio de Interes</label>
+        <select>
+          <option value="">Seleccionar servicio...</option>
+          <option>Obra Civil Industrial</option>
+          <option>Estructura Metalica</option>
+          <option>Instalaciones Electricas</option>
+          <option>Instalaciones de Gas</option>
+          <option>Drenaje y Agua Potable</option>
+          <option>Renta de Maquinaria</option>
+          <option>Venta Maquinaria Amarilla</option>
+          <option>Topografia y Fotogrametria</option>
+          <option>Diseno Arquitectonico</option>
+          <option>Construccion Habitacional</option>
+          <option>Remodelacion de Espacios</option>
+          <option>Revision Estructural</option>
+          <option>Proyecto Ejecutivo</option>
+          <option>Mantenimiento Industrial</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Descripcion del Proyecto</label>
+        <textarea placeholder="Cuentanos brevemente sobre tu proyecto, ubicacion y alcance..."></textarea>
+      </div>
+      <button type="button" class="form-submit" id="btnSubmit">Enviar Solicitud &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-brand">DISENO <span>CIVIL</span> SUSTENTABLE&#174;</div>
+  <p>&#169; 2025 DICSA &mdash; Hermosillo, Sonora, Mexico</p>
+  <div class="footer-right">
+    <div class="footer-social" style="display:flex;gap:1rem;">
+      <a href="https://www.facebook.com/disenocivil.sustentable" target="_blank" rel="noopener" title="Facebook">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/soy_el_constructor" target="_blank" rel="noopener" title="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://wa.me/525649470698" target="_blank" rel="noopener" title="WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.852L.057 23.5l5.797-1.52A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.498-5.2-1.37l-.373-.22-3.44.902.918-3.352-.243-.386A9.937 9.937 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/company/dicsa-mx" target="_blank" rel="noopener" title="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="footer-nav" style="display:flex;gap:1.5rem;">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/525649470698?text=Hola%2C%20me%20interesa%20cotizar%20un%20proyecto%20con%20DICSA" target="_blank" rel="noopener" class="wa-float">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.852L.057 23.5l5.797-1.52A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.498-5.2-1.37l-.373-.22-3.44.902.918-3.352-.243-.386A9.937 9.937 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  <span>Cotizar por WhatsApp</span>
+</a>
+
+<script>
+  // Scroll Reveal
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        var delay = e.target.dataset.delay || 0;
+        setTimeout(function() { e.target.classList.add('visible'); }, parseInt(delay));
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el, i) {
+    el.dataset.delay = (i % 4) * 80;
+    observer.observe(el);
+  });
+
+  // Nav scroll
+  window.addEventListener('scroll', function() {
+    var nav = document.getElementById('main-nav');
+    nav.style.borderBottomColor = window.scrollY > 80 ? 'rgba(27,184,197,0.3)' : 'rgba(27,184,197,0.15)';
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    var links = document.querySelector('.nav-links');
+    var open = links.getAttribute('data-open') === '1';
+    if (open) {
+      links.removeAttribute('style');
+      links.removeAttribute('data-open');
+    } else {
+      links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:rgba(13,17,23,0.98);padding:2rem;gap:1.5rem;border-bottom:1px solid rgba(27,184,197,0.2);backdrop-filter:blur(12px);z-index:99;';
+      links.setAttribute('data-open', '1');
+      links.querySelectorAll('a').forEach(function(a) {
+        a.style.fontSize = '1rem';
+        a.addEventListener('click', function() {
+          links.removeAttribute('style');
+          links.removeAttribute('data-open');
+        });
+      });
+    }
+  }
+
+  // Form button
+  document.getElementById('btnSubmit').addEventListener('click', function() {
+    this.textContent = 'Mensaje enviado';
+    this.style.background = '#148fa0';
+    var btn = this;
+    setTimeout(function() {
+      btn.textContent = 'Enviar Solicitud';
+      btn.style.background = '';
+    }, 3000);
+  });
+</script>
+</body>
+</html>
