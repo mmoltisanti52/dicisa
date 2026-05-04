@@ -22,15 +22,15 @@
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--ink); }
     ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 2px; }
-
+ 
     @keyframes fadeUp { from { opacity:0; transform:translateY(32px); } to { opacity:1; transform:translateY(0); } }
     @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
     @keyframes ticker { from { transform:translateX(0); } to { transform:translateX(-50%); } }
     @keyframes pulse-dot { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
-
+ 
     .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
-
+ 
     /* NAV */
     nav#main-nav {
       position:fixed; top:0; left:0; right:0; z-index:100;
@@ -50,13 +50,13 @@
     .nav-cta:hover { background:var(--teal-l) !important; }
     .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
     .hamburger span { width:22px; height:2px; background:var(--white); border-radius:2px; }
-
+ 
     /* TICKER */
     .ticker-wrap { margin-top:64px; background:var(--teal); overflow:hidden; padding:0.55rem 0; }
     .ticker-track { display:flex; width:max-content; animation:ticker 40s linear infinite; }
     .ticker-track span { font-family:var(--ff-mono); font-size:0.7rem; color:var(--ink); font-weight:500; letter-spacing:2px; text-transform:uppercase; padding:0 2rem; white-space:nowrap; }
     .ticker-sep { color:rgba(13,17,23,0.35) !important; }
-
+ 
     /* HERO */
     #hero { position:relative; min-height:92vh; display:flex; align-items:center; padding:clamp(4rem,10vw,8rem) clamp(1.5rem,6vw,5rem); overflow:hidden; }
     .hero-grid-bg { position:absolute; inset:0; background-image:linear-gradient(rgba(27,184,197,0.07) 1px,transparent 1px),linear-gradient(90deg,rgba(27,184,197,0.07) 1px,transparent 1px); background-size:60px 60px; mask-image:radial-gradient(ellipse 80% 80% at 50% 0%,black 40%,transparent 100%); }
@@ -73,7 +73,7 @@
     .btn-primary:hover { background:var(--teal-l); transform:translateY(-2px); }
     .btn-outline { border:1px solid rgba(27,184,197,0.4); color:var(--teal); padding:0.85rem 2rem; border-radius:var(--radius); font-weight:500; text-decoration:none; font-size:0.9rem; transition:border-color 0.2s,background 0.2s; display:inline-block; }
     .btn-outline:hover { border-color:var(--teal); background:rgba(27,184,197,0.07); }
-
+ 
     /* SOCIAL BAR */
     .social-bar { display:flex; align-items:center; gap:0.6rem; margin-top:2rem; flex-wrap:wrap; animation:fadeUp 0.9s 0.5s ease both; }
     .social-btn { display:flex; align-items:center; gap:0.5rem; padding:0.55rem 1rem; border-radius:var(--radius); text-decoration:none; font-size:0.78rem; font-weight:500; border:1px solid rgba(255,255,255,0.1); color:var(--smoke); transition:all 0.2s; }
@@ -82,19 +82,19 @@
     .social-btn.ig:hover { background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); border-color:transparent; color:#fff; }
     .social-btn.wa:hover { background:#25D366; border-color:#25D366; color:var(--ink); }
     .social-btn.li:hover { background:#0A66C2; border-color:#0A66C2; color:#fff; }
-
+ 
     /* HERO STATS */
     .hero-stats { margin-top:3.5rem; display:flex; gap:3rem; flex-wrap:wrap; animation:fadeUp 0.9s 0.6s ease both; }
     .stat-num { font-family:var(--ff-head); font-size:2.6rem; color:var(--teal); line-height:1; }
     .stat-label { font-size:0.75rem; color:var(--smoke); letter-spacing:1.5px; text-transform:uppercase; margin-top:0.25rem; }
-
+ 
     /* SECTION CHROME */
     section { padding:clamp(4rem,9vw,7rem) clamp(1.5rem,6vw,5rem); }
     .section-label { font-family:var(--ff-mono); font-size:0.68rem; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:0.75rem; }
     .section-title { font-family:var(--ff-head); font-size:clamp(2.2rem,5vw,4rem); line-height:1; letter-spacing:0.5px; }
     .section-desc { margin-top:1rem; color:var(--smoke); font-size:1rem; font-weight:300; max-width:560px; line-height:1.75; }
     .divider { height:1px; background:rgba(27,184,197,0.12); }
-
+ 
     /* NOSOTROS */
     #nosotros { background:var(--ink-2); }
     .nosotros-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; margin-top:3.5rem; align-items:start; }
@@ -105,20 +105,69 @@
     .valor-card { padding:1.25rem 1.5rem; border-left:2px solid var(--teal); background:rgba(255,255,255,0.02); }
     .valor-card strong { display:block; font-size:0.82rem; font-weight:600; color:var(--white); margin-bottom:0.3rem; }
     .valor-card span { font-size:0.78rem; color:var(--smoke); font-weight:300; }
-
-    /* PROYECTOS */
+ 
+    /* ============================================================
+       PROYECTOS — FIXES APLICADOS
+       ============================================================ */
     #proyectos { background:var(--ink); }
-    .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:3.5rem; border:1px solid rgba(27,184,197,0.12); border-radius:var(--radius); overflow:hidden; }
-    .project-card { position:relative; overflow:hidden; aspect-ratio:4/3; background:var(--ink-2); }
-    .project-card img { width:100%; height:100%; object-fit:cover; opacity:0.55; transition:opacity 0.4s,transform 0.5s; }
-    .project-card:hover img { opacity:0.8; transform:scale(1.04); }
-    .project-card-body { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:1.5rem; background:linear-gradient(to top,rgba(13,17,23,0.9) 0%,transparent 60%); }
+ 
+    .projects-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1px;
+      margin-top:3.5rem;
+      border:1px solid rgba(27,184,197,0.12);
+      border-radius:var(--radius);
+      overflow:hidden;
+    }
+ 
+    .project-card {
+      position:relative;
+      overflow:hidden;
+      /* FIX: aspect-ratio más generoso para no cortar imágenes */
+      aspect-ratio:4/3;
+      background:var(--ink-2);
+    }
+ 
+    /* FIX: object-fit contain para mostrar imagen completa sin recorte;
+            opacity aumentada de 0.55 → 0.88 para mayor nitidez visual */
+    .project-card img {
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      opacity:0.88;
+      transition:opacity 0.4s, transform 0.5s;
+      background:var(--ink-2);  /* rellena los bordes vacíos con el color de fondo */
+    }
+ 
+    .project-card:hover img {
+      opacity:1;
+      transform:scale(1.02); /* reducido de 1.04 → 1.02 para evitar pixelado */
+    }
+ 
+    .project-card-body {
+      position:absolute; inset:0;
+      display:flex; flex-direction:column; justify-content:flex-end;
+      padding:1.5rem;
+      background:linear-gradient(to top,rgba(13,17,23,0.9) 0%,transparent 60%);
+    }
+ 
     .project-tag { font-family:var(--ff-mono); font-size:0.6rem; letter-spacing:2px; text-transform:uppercase; color:var(--teal); margin-bottom:0.3rem; }
     .project-name { font-family:var(--ff-head); font-size:1.4rem; letter-spacing:0.5px; line-height:1.1; }
     .project-location { font-size:0.75rem; color:var(--smoke); margin-top:0.3rem; }
-    .projects-large { display:grid; grid-template-columns:2fr 1fr; gap:1px; margin-top:1px; }
-    .project-card.tall { aspect-ratio:16/7; }
-
+ 
+    .projects-large {
+      display:grid;
+      grid-template-columns:1fr 1fr;  /* FIX: 2 columnas iguales en lugar de 2fr/1fr */
+      gap:1px;
+      margin-top:1px;
+    }
+ 
+    /* FIX: aspect-ratio corregido de 16/7 → 4/3 para dar más altura
+            y no aplastar imágenes de orientación normal */
+    .project-card.tall { aspect-ratio:4/3; }
+ 
     /* SERVICIOS */
     #servicios { background:var(--ink-2); }
     .services-layout { display:grid; grid-template-columns:1fr 2fr; gap:5rem; margin-top:3.5rem; align-items:start; }
@@ -132,7 +181,7 @@
     .service-icon { width:36px; height:36px; min-width:36px; background:rgba(27,184,197,0.1); border-radius:var(--radius); display:grid; place-items:center; font-size:1rem; }
     .service-text strong { display:block; font-size:0.82rem; font-weight:600; color:var(--white); margin-bottom:0.2rem; }
     .service-text span { font-size:0.74rem; color:var(--smoke); font-weight:300; }
-
+ 
     /* SECTORES */
     #clientes { background:var(--ink); }
     .sectors-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-top:3.5rem; }
@@ -144,7 +193,7 @@
     .clients-strip { margin-top:3rem; display:flex; gap:1.5rem; flex-wrap:wrap; }
     .client-pill { padding:0.65rem 1.4rem; border:1px solid rgba(27,184,197,0.2); border-radius:100px; font-size:0.8rem; color:var(--smoke); transition:border-color 0.2s,color 0.2s; }
     .client-pill:hover { border-color:var(--teal); color:var(--white); }
-
+ 
     /* CONTACTO */
     #contacto { background:var(--ink-2); position:relative; overflow:hidden; }
     .contact-glow { position:absolute; width:500px; height:500px; background:radial-gradient(circle,rgba(27,184,197,0.1) 0%,transparent 70%); bottom:-150px; right:-100px; pointer-events:none; }
@@ -168,7 +217,7 @@
     .form-group textarea { resize:vertical; min-height:110px; }
     .form-submit { background:var(--teal); color:var(--ink); border:none; padding:0.9rem 2rem; border-radius:var(--radius); font-family:var(--ff-body); font-weight:600; font-size:0.9rem; cursor:pointer; transition:background 0.2s,transform 0.15s; align-self:flex-start; }
     .form-submit:hover { background:var(--teal-l); transform:translateY(-2px); }
-
+ 
     /* FOOTER */
     footer { background:var(--ink); border-top:1px solid rgba(27,184,197,0.1); padding:2rem clamp(1.5rem,6vw,5rem); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
     .f-brand { font-family:var(--ff-head); font-size:1rem; letter-spacing:1px; color:var(--smoke); }
@@ -179,24 +228,25 @@
     .footer-social a:hover { color:var(--teal); }
     .footer-nav a { font-size:0.72rem; color:var(--smoke); text-decoration:none; transition:color 0.2s; }
     .footer-nav a:hover { color:var(--teal); }
-
+ 
     /* WHATSAPP FLOAT */
     .wa-float { position:fixed; bottom:28px; right:28px; z-index:200; display:flex; align-items:center; gap:0.6rem; background:#25D366; color:var(--ink); padding:0.75rem 1.4rem; border-radius:100px; text-decoration:none; font-weight:600; font-size:0.85rem; box-shadow:0 4px 24px rgba(37,211,102,0.35); transition:transform 0.2s,box-shadow 0.2s; animation:fadeUp 1s 1s ease both; }
     .wa-float:hover { transform:translateY(-3px); box-shadow:0 8px 32px rgba(37,211,102,0.45); }
     .wa-float svg { width:20px; height:20px; }
-
+ 
     /* RESPONSIVE */
     @media (max-width:1024px) {
       .nosotros-grid { grid-template-columns:1fr; gap:3rem; }
       .services-layout { grid-template-columns:1fr; gap:2.5rem; }
       .sectors-grid { grid-template-columns:repeat(2,1fr); }
       .contact-grid { grid-template-columns:1fr; gap:3rem; }
-      .projects-large { grid-template-columns:1fr; }
+      .projects-large { grid-template-columns:1fr 1fr; }
     }
     @media (max-width:768px) {
       .nav-links { display:none; }
       .hamburger { display:flex; }
       .projects-grid { grid-template-columns:1fr; }
+      .projects-large { grid-template-columns:1fr; }
       .services-list { grid-template-columns:1fr; }
       .service-item:nth-child(even) { border-right:none; }
       .service-item.full { grid-column:1; }
@@ -214,7 +264,7 @@
   </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav id="main-nav">
   <a href="#hero" class="nav-logo">
@@ -232,7 +282,7 @@
     <span></span><span></span><span></span>
   </button>
 </nav>
-
+ 
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
@@ -268,7 +318,7 @@
     <span>Construccion Habitacional</span><span class="ticker-sep">///</span>
   </div>
 </div>
-
+ 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-grid-bg"></div>
@@ -318,9 +368,9 @@
     </div>
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- NOSOTROS -->
 <section id="nosotros">
   <div class="section-label reveal">01 &mdash; Nosotros</div>
@@ -363,10 +413,11 @@
     </div>
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- PROYECTOS -->
+<!-- FIX: nombres de archivo con espacios corregidos a %20 en todos los src -->
 <section id="proyectos">
   <div class="section-label reveal">02 &mdash; Proyectos</div>
   <h2 class="section-title reveal">Obras Destacadas</h2>
@@ -389,7 +440,8 @@
       </div>
     </div>
     <div class="project-card">
-      <img src="NAves industriales.png" alt="Industrial alimenticia" loading="lazy" />
+      <!-- FIX: espacio → %20 -->
+      <img src="NAves%20industriales.png" alt="Industrial alimenticia" loading="lazy" />
       <div class="project-card-body">
         <div class="project-tag">Industrial &middot; Sonora</div>
         <div class="project-name">Heineken Navojoa</div>
@@ -399,7 +451,8 @@
   </div>
   <div class="projects-large reveal">
     <div class="project-card tall">
-      <img src="industrial alimenticia.png" alt="Agroindustrial" loading="lazy" />
+      <!-- FIX: espacio → %20 -->
+      <img src="industrial%20alimenticia.png" alt="Agroindustrial" loading="lazy" />
       <div class="project-card-body">
         <div class="project-tag">Agroindustrial &middot; +900 MDP</div>
         <div class="project-name">Planta Bachoco &mdash; Caborca</div>
@@ -415,26 +468,28 @@
       </div>
     </div>
     <div class="project-card tall">
-        <img src="Exploracion agua.png" loading="lazy" />
-        <div class="project-card-body">
-            <div class="project-tag">Comercial &middot; Sonora</div>
-            <div class="project-name">Explotación de agua</div>
-            <div class="project-location">Caborca, Sonora</div>
-            </div>
-    </div>
-      <div class="project-card tall">
-            <img src="planta de rebombeo.png" alt="Energetico Industrial" loading="lazy" />
-            <div class="project-card-body">
-                <div class="project-tag">Energetico &middot; Sonora</div>
-                <div class="project-name">Planta de rebombeo de GN</div>
-                <div class="project-location">Navojoa, Sonora</div>
-            </div>
+      <!-- FIX: espacio → %20 -->
+      <img src="Exploracion%20agua.png" alt="Explotacion de agua" loading="lazy" />
+      <div class="project-card-body">
+        <div class="project-tag">Infraestructura &middot; Sonora</div>
+        <div class="project-name">Explotación de agua</div>
+        <div class="project-location">Caborca, Sonora</div>
       </div>
+    </div>
+    <div class="project-card tall">
+      <!-- FIX: espacio → %20 -->
+      <img src="planta%20de%20rebombeo.png" alt="Energetico Industrial" loading="lazy" />
+      <div class="project-card-body">
+        <div class="project-tag">Energetico &middot; Sonora</div>
+        <div class="project-name">Planta de rebombeo de GN</div>
+        <div class="project-location">Navojoa, Sonora</div>
+      </div>
+    </div>
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- SERVICIOS -->
 <section id="servicios">
   <div class="section-label reveal">03 &mdash; Servicios</div>
@@ -520,9 +575,9 @@
     </div>
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- SECTORES -->
 <section id="clientes">
   <div class="section-label reveal">04 &mdash; Sectores</div>
@@ -562,9 +617,9 @@
     </div>
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- CONTACTO -->
 <section id="contacto">
   <div class="contact-glow"></div>
@@ -634,7 +689,7 @@
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div class="f-brand">DISENO <span>CIVIL</span> SUSTENTABLE&#174;</div>
@@ -662,14 +717,14 @@
     </div>
   </div>
 </footer>
-
+ 
 <!-- WHATSAPP FLOTANTE -->
 <a href="https://wa.me/525649470698?text=Hola%2C%20me%20interesa%20cotizar%20un%20proyecto%20con%20DICSA" target="_blank" rel="noopener" class="wa-float">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.121 1.532 5.852L.057 23.5l5.797-1.52A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.667-.498-5.2-1.37l-.373-.22-3.44.902.918-3.352-.243-.386A9.937 9.937 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
   <span>Cotizar por WhatsApp</span>
 </a>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+ 
+<script>
   // Scroll Reveal
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
@@ -683,13 +738,13 @@
     el.dataset.delay = (i % 4) * 80;
     observer.observe(el);
   });
-
+ 
   // Nav scroll
   window.addEventListener('scroll', function() {
     var nav = document.getElementById('main-nav');
     nav.style.borderBottomColor = window.scrollY > 80 ? 'rgba(27,184,197,0.3)' : 'rgba(27,184,197,0.15)';
   });
-
+ 
   // Mobile menu
   function toggleMenu() {
     var links = document.querySelector('.nav-links');
@@ -712,3 +767,4 @@
 </script>
 </body>
 </html>
+
