@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eficiencia Energética Industrial en Sonora — DICISA</title>
+  <meta name="description" content="Reducimos hasta un 35% tu costo eléctrico industrial. Auditorías energéticas, optimización tarifaria CFE, Código de Red y sistemas solares para agroindustria y manufactura en Sonora.">
+  <meta name="keywords" content="eficiencia energética industrial Sonora, auditoría energética Hermosillo, optimización tarifaria CFE, Código de Red México, ahorro energético agroindustria, DICISA">
+  <link rel="canonical" href="https://www.dicisa.net/eficiencia-energetica-industrial/">
+  <meta property="og:title" content="Eficiencia Energética Industrial — DICISA Sonora">
+  <meta property="og:description" content="Reducimos hasta un 35% tu costo eléctrico. Auditorías, Código de Red y optimización tarifaria para industria en Sonora.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.dicisa.net/eficiencia-energetica-industrial/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Eficiencia Energética Industrial",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "DICISA — Diseño Civil Sustentable",
+      "url": "https://www.dicisa.net",
+      "telephone": "+525649470698",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hermosillo",
+        "addressRegion": "Sonora",
+        "addressCountry": "MX"
+      },
+      "areaServed": ["Hermosillo", "Guaymas", "Navojoa", "Caborca", "Sonora"]
+    },
+    "description": "Auditorías energéticas, optimización tarifaria CFE, cumplimiento Código de Red y sistemas solares industriales para reducir costos operativos en Sonora.",
+    "serviceType": "Eficiencia Energética Industrial",
+    "areaServed": "Sonora, México"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0e14;
+      --bg2: #0f1520;
+      --bg3: #141d2c;
+      --accent: #00d4aa;
+      --accent2: #f0c040;
+      --text: #e8ecf2;
+      --muted: #7a8799;
+      --border: rgba(255,255,255,0.07);
+      --card: rgba(255,255,255,0.04);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(10,14,20,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.2rem; letter-spacing: 0.08em; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { background: var(--accent); color: #0a0e14; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.9rem; padding: 8px 20px; border-radius: 4px; text-decoration: none; letter-spacing: 0.06em; transition: opacity 0.2s; }
+    .nav-cta:hover { opacity: 0.85; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 100px 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(0,212,170,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,170,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-glow {
+      position: absolute; top: -200px; right: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(0,212,170,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-glow2 {
+      position: absolute; bottom: -100px; left: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(240,192,64,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-content { max-width: 1100px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,212,170,0.1); border: 1px solid rgba(0,212,170,0.25);
+      color: var(--accent); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+      padding: 6px 16px; border-radius: 2px; text-transform: uppercase; margin-bottom: 2rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .badge-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+    .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 800; line-height: 0.95;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+    .hero h1 em { font-style: normal; color: var(--accent); display: block; }
+    .hero-sub {
+      font-size: 1.15rem; color: var(--muted); max-width: 580px;
+      margin: 1.5rem 0 2.5rem; line-height: 1.7;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.6s 0.3s ease both; }
+    .btn-primary {
+      background: var(--accent); color: #0a0e14;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700; font-size: 1rem; letter-spacing: 0.06em;
+      padding: 14px 32px; border-radius: 4px; text-decoration: none;
+      border: none; cursor: pointer; transition: all 0.2s; text-transform: uppercase;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent; color: var(--text);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600; font-size: 1rem; letter-spacing: 0.06em;
+      padding: 13px 32px; border-radius: 4px; text-decoration: none;
+      border: 1px solid var(--border); cursor: pointer; transition: all 0.2s; text-transform: uppercase;
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-stats {
+      display: flex; gap: 3rem; margin-top: 4rem;
+      animation: fadeUp 0.6s 0.4s ease both;
+      flex-wrap: wrap;
+    }
+    .stat-item {}
+    .stat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 2.8rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .stat-lbl { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; margin-top: 4px; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+    /* SECTIONS */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+    .section-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; text-transform: uppercase; line-height: 1.05; margin-bottom: 1.5rem; }
+    .section-title em { font-style: normal; color: var(--accent); }
+    .section-sub { font-size: 1.05rem; color: var(--muted); max-width: 560px; line-height: 1.7; }
+    .divider-line { width: 48px; height: 3px; background: var(--accent); margin-bottom: 2rem; }
+
+    /* PROBLEMA */
+    .problema { background: var(--bg2); }
+    .problema-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-top: 3rem; }
+    .problema-list { display: flex; flex-direction: column; gap: 1rem; }
+    .problema-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.2rem 1.4rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid rgba(240,192,64,0.6);
+      border-radius: 4px;
+    }
+    .problema-icon { font-size: 1.4rem; margin-top: 2px; }
+    .problema-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 3px; }
+    .problema-desc { font-size: 0.85rem; color: var(--muted); }
+    .problema-highlight {
+      background: linear-gradient(135deg, rgba(0,212,170,0.08), rgba(240,192,64,0.06));
+      border: 1px solid rgba(0,212,170,0.15);
+      border-radius: 8px; padding: 2.5rem;
+    }
+    .highlight-num { font-family: 'Barlow Condensed', sans-serif; font-size: 5rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .highlight-text { font-size: 1.1rem; margin: 0.5rem 0 1rem; font-weight: 600; }
+    .highlight-sub { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+    /* SERVICIOS */
+    .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .servicio-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2rem;
+      transition: border-color 0.3s, transform 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .servicio-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--accent); transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .servicio-card:hover::before { transform: scaleX(1); }
+    .servicio-card:hover { border-color: rgba(0,212,170,0.3); transform: translateY(-2px); }
+    .servicio-num { font-family: 'Barlow Condensed', sans-serif; font-size: 3rem; font-weight: 800; color: rgba(0,212,170,0.15); line-height: 1; margin-bottom: 1rem; }
+    .servicio-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .servicio-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; }
+    .servicio-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font-size: 0.72rem; padding: 3px 10px; border-radius: 2px; background: rgba(0,212,170,0.1); color: var(--accent); font-weight: 600; letter-spacing: 0.04em; }
+
+    /* PROCESO */
+    .proceso { background: var(--bg2); }
+    .proceso-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; margin-top: 3rem; position: relative; }
+    .proceso-steps::before {
+      content: ''; position: absolute; top: 32px; left: 10%; right: 10%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+    .paso {
+      padding: 2rem 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+    .paso-num {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.6rem; font-weight: 800; color: var(--accent);
+    }
+    .paso-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; }
+    .paso-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+    /* SECTORES */
+    .sectores-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 3rem; }
+    .sector-card {
+      padding: 1.5rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .sector-icon { font-size: 2rem; }
+    .sector-name { font-weight: 600; font-size: 0.95rem; }
+    .sector-sub { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(0,212,170,0.12), rgba(240,192,64,0.08));
+      border-top: 1px solid rgba(0,212,170,0.2);
+      border-bottom: 1px solid rgba(0,212,170,0.2);
+    }
+    .cta-inner { text-align: center; }
+    .cta-inner h2 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; text-transform: uppercase; margin-bottom: 1rem; }
+    .cta-inner p { font-size: 1.05rem; color: var(--muted); max-width: 480px; margin: 0 auto 2.5rem; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-whatsapp { background: #25D366; color: #fff; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.06em; padding: 14px 32px; border-radius: 4px; text-decoration: none; text-transform: uppercase; transition: opacity 0.2s; display: flex; align-items: center; gap: 8px; }
+    .btn-whatsapp:hover { opacity: 0.88; }
+
+    /* FORM */
+    .form-section { background: var(--bg3); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .form-info h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 800; text-transform: uppercase; margin-bottom: 1rem; }
+    .form-info p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; margin-bottom: 2rem; }
+    .form-benefits { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .form-benefits li { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--muted); }
+    .form-benefits li::before { content: '✓'; color: var(--accent); font-weight: 700; }
+    form { display: flex; flex-direction: column; gap: 1rem; }
+    input, select, textarea {
+      background: var(--card); border: 1px solid var(--border);
+      color: var(--text); border-radius: 4px; padding: 12px 16px;
+      font-family: 'Barlow', sans-serif; font-size: 0.95rem;
+      width: 100%; transition: border-color 0.2s;
+    }
+    input::placeholder, textarea::placeholder { color: var(--muted); }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+    select option { background: #0f1520; }
+    textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-submit { background: var(--accent); color: #0a0e14; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.08em; padding: 14px; border-radius: 4px; border: none; cursor: pointer; text-transform: uppercase; transition: opacity 0.2s; }
+    .form-submit:hover { opacity: 0.88; }
+    .form-note { font-size: 0.78rem; color: var(--muted); text-align: center; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 1px; margin-top: 3rem; }
+    .faq-item { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+    .faq-q {
+      width: 100%; text-align: left;
+      background: var(--card); border: none; color: var(--text);
+      padding: 1.2rem 1.5rem;
+      font-family: 'Barlow', sans-serif; font-size: 0.95rem; font-weight: 600;
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; transition: background 0.2s;
+    }
+    .faq-q:hover { background: rgba(255,255,255,0.06); }
+    .faq-q .faq-arrow { font-size: 1.2rem; color: var(--accent); transition: transform 0.3s; flex-shrink: 0; }
+    .faq-a { display: none; padding: 0 1.5rem 1.2rem; font-size: 0.9rem; color: var(--muted); line-height: 1.7; background: var(--card); }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-arrow { transform: rotate(45deg); }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; color: var(--text); text-decoration: none; }
+    .footer-logo span { color: var(--accent); }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a { font-size: 0.85rem; color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy { font-size: 0.8rem; color: var(--muted); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .problema-grid, .form-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .proceso-steps::before { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://www.dicisa.net" class="nav-logo">DI<span>C</span>ISA</a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#sectores">Sectores</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta">Diagnóstico Gratuito</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Eficiencia Energética Industrial · Sonora
+    </div>
+    <h1>
+      Reduce tu factura<br>
+      <em>eléctrica hasta</em><br>
+      un 35%
+    </h1>
+    <p class="hero-sub">
+      Diagnosticamos, optimizamos y automatizamos el consumo energético de tu planta industrial en Sonora. Más ahorro, menos paros, cero desperdicio.
+    </p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary">Diagnóstico Gratuito →</a>
+      <a href="https://wa.me/525649470698?text=Hola,%20me%20interesa%20una%20auditoría%20energética%20para%20mi%20planta" class="btn-ghost" target="_blank">Hablar con un ingeniero</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">+900</div>
+        <div class="stat-lbl">MDP en proyectos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">35%</div>
+        <div class="stat-lbl">Ahorro energético promedio</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-lbl">Años en Sonora</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">22+</div>
+        <div class="stat-lbl">Especialidades técnicas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section class="problema">
+  <div class="container">
+    <div class="section-label">El problema</div>
+    <div class="divider-line"></div>
+    <h2 class="section-title">Tu planta está<br><em>perdiendo dinero</em><br>en energía</h2>
+    <div class="problema-grid">
+      <div class="problema-list">
+        <div class="problema-item">
+          <span class="problema-icon">⚡</span>
+          <div>
+            <div class="problema-title">Tarifas eléctricas elevadas</div>
+            <div class="problema-desc">Las tarifas industriales de CFE incluyen cargos por demanda máxima que la mayoría de plantas no optimiza. Cada kW de demanda mal gestionado te cuesta miles mensuales.</div>
+          </div>
+        </div>
+        <div class="problema-item">
+          <span class="problema-icon">📉</span>
+          <div>
+            <div class="problema-title">Sin monitoreo energético real</div>
+            <div class="problema-desc">Si no mides, no puedes mejorar. La mayoría de plantas opera con medidores generales sin desagregación por proceso, equipo o turno.</div>
+          </div>
+        </div>
+        <div class="problema-item">
+          <span class="problema-icon">🔴</span>
+          <div>
+            <div class="problema-title">Incumplimiento del Código de Red</div>
+            <div class="problema-desc">La regulación CFE-SENER exige cumplimiento técnico a toda instalación conectada a la red. El incumplimiento genera penalizaciones y puede derivar en desconexión.</div>
+          </div>
+        </div>
+        <div class="problema-item">
+          <span class="problema-icon">🌡️</span>
+          <div>
+            <div class="problema-title">Refrigeración e HVAC ineficientes</div>
+            <div class="problema-desc">Los sistemas de enfriamiento pueden representar hasta el 60% del consumo eléctrico total en agroindustria. Sin optimización, ese gasto es recurrente y creciente.</div>
+          </div>
+        </div>
+      </div>
+      <div class="problema-highlight">
+        <div class="highlight-num">60%</div>
+        <div class="highlight-text">de las plantas industriales en Sonora pagan de más en su tarifa eléctrica</div>
+        <div class="highlight-sub">La causa principal: no tienen una auditoría energética que identifique dónde se fuga la energía y cómo renegociar la tarifa con CFE. Un diagnóstico puede revelar ahorros de $50,000 a $500,000 MXN mensuales, dependiendo del tamaño de la planta.</div>
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08);">
+          <div style="font-size: 0.8rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem;">Clientes que confían en DICISA</div>
+          <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+            <span style="font-weight: 600; font-size: 0.9rem; color: var(--text);">Bachoco</span>
+            <span style="font-weight: 600; font-size: 0.9rem; color: var(--text);">Heineken</span>
+            <span style="font-weight: 600; font-size: 0.9rem; color: var(--text);">Maseca / Gruma</span>
+            <span style="font-weight: 600; font-size: 0.9rem; color: var(--text);">Dos Bocas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="container">
+    <div class="section-label">Lo que hacemos</div>
+    <div class="divider-line"></div>
+    <h2 class="section-title">Servicios de<br><em>eficiencia energética</em></h2>
+    <p class="section-sub">No solo instalamos equipos — analizamos, optimizamos y monitoreamos tu consumo energético para garantizar resultados medibles.</p>
+    <div class="servicios-grid">
+      <div class="servicio-card">
+        <div class="servicio-num">01</div>
+        <div class="servicio-title">Auditoría Energética Industrial</div>
+        <div class="servicio-desc">Diagnóstico completo del consumo eléctrico de tu planta. Identificamos fugas, ineficiencias y oportunidades de ahorro con mediciones reales y análisis técnico certificado.</div>
+        <div class="servicio-tags">
+          <span class="tag">ISO 50001</span>
+          <span class="tag">Medición CFE</span>
+          <span class="tag">Baseline energético</span>
+        </div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-num">02</div>
+        <div class="servicio-title">Optimización Tarifaria CFE</div>
+        <div class="servicio-desc">Analizamos tu tarifa actual y determinamos si estás en la modalidad correcta. La migración de tarifa es una de las acciones con mayor ROI inmediato para industria en México.</div>
+        <div class="servicio-tags">
+          <span class="tag">Tarifas PDBT/GDBT</span>
+          <span class="tag">Factor de potencia</span>
+          <span class="tag">Demanda máxima</span>
+        </div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-num">03</div>
+        <div class="servicio-title">Cumplimiento Código de Red</div>
+        <div class="servicio-desc">Verificación y adecuación técnica para cumplir la normativa CFE-SENER. Evita penalizaciones, multas y problemas de conexión en tu instalación industrial.</div>
+        <div class="servicio-tags">
+          <span class="tag">Calidad de energía</span>
+          <span class="tag">Harmónicos</span>
+          <span class="tag">Factor FP</span>
+        </div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-num">04</div>
+        <div class="servicio-title">Sistemas Solares Industriales</div>
+        <div class="servicio-desc">Diseño e instalación de sistemas fotovoltaicos para reducir tu consumo de CFE. Incluye análisis de ROI, generación esperada y trámites de interconexión ante la CENACE.</div>
+        <div class="servicio-tags">
+          <span class="tag">FV industrial</span>
+          <span class="tag">BESS</span>
+          <span class="tag">Net Metering</span>
+        </div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-num">05</div>
+        <div class="servicio-title">Subestaciones y Media Tensión</div>
+        <div class="servicio-desc">Diseño, instalación y mantenimiento de subestaciones eléctricas y redes de media tensión. Desde 13.8 kV hasta 115 kV para plantas de gran consumo en el noroeste de México.</div>
+        <div class="servicio-tags">
+          <span class="tag">Media tensión</span>
+          <span class="tag">Transformadores</span>
+          <span class="tag">Protecciones</span>
+        </div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-num">06</div>
+        <div class="servicio-title">Monitoreo Energético Continuo</div>
+        <div class="servicio-desc">Dashboard web con KPIs de consumo, demanda y factor de potencia en tiempo real. Reportes automáticos y alertas que te permiten actuar antes de que el problema llegue a tu factura.</div>
+        <div class="servicio-tags">
+          <span class="tag">Dashboard web</span>
+          <span class="tag">Alertas automáticas</span>
+          <span class="tag">IoT industrial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso" class="proceso">
+  <div class="container">
+    <div class="section-label">Cómo trabajamos</div>
+    <div class="divider-line"></div>
+    <h2 class="section-title">Tu camino al<br><em>ahorro energético</em></h2>
+    <div class="proceso-steps">
+      <div class="paso">
+        <div class="paso-num">01</div>
+        <div class="paso-title">Diagnóstico inicial</div>
+        <div class="paso-desc">Revisión gratuita de tus facturas CFE y visita técnica a tu instalación para identificar el potencial de ahorro real.</div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">02</div>
+        <div class="paso-title">Auditoría completa</div>
+        <div class="paso-desc">Mediciones detalladas por equipo, proceso y turno. Identificamos cada fuente de ineficiencia con datos reales.</div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">03</div>
+        <div class="paso-title">Plan de mejoras</div>
+        <div class="paso-desc">Entregamos un plan técnico priorizado con inversión, ahorro esperado y tiempo de retorno para cada acción.</div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">04</div>
+        <div class="paso-title">Implementación</div>
+        <div class="paso-desc">Ejecutamos las mejoras priorizadas: desde optimización tarifaria (sin inversión) hasta instalación de solar o BESS.</div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">05</div>
+        <div class="paso-title">Monitoreo continuo</div>
+        <div class="paso-desc">Dashboard de consumo en tiempo real y reportes mensuales para garantizar que el ahorro se mantiene y mejora.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORES -->
+<section id="sectores">
+  <div class="container">
+    <div class="section-label">Industrias que atendemos</div>
+    <div class="divider-line"></div>
+    <h2 class="section-title">Expertos en tu<br><em>sector industrial</em></h2>
+    <div class="sectores-grid">
+      <div class="sector-card"><span class="sector-icon">🌾</span><div><div class="sector-name">Agroindustria</div><div class="sector-sub">Empacadoras, procesadoras, frigoríficos</div></div></div>
+      <div class="sector-card"><span class="sector-icon">🍺</span><div><div class="sector-name">Industria Alimentaria</div><div class="sector-sub">Bebidas, alimentos, cadena fría</div></div></div>
+      <div class="sector-card"><span class="sector-icon">🦐</span><div><div class="sector-name">Acuacultura</div><div class="sector-sub">Granjas camaroneras, plantas de proceso</div></div></div>
+      <div class="sector-card"><span class="sector-icon">🏭</span><div><div class="sector-name">Manufactura</div><div class="sector-sub">Maquila, ensamble, producción</div></div></div>
+      <div class="sector-card"><span class="sector-icon">🏗️</span><div><div class="sector-name">Parques Industriales</div><div class="sector-sub">Nearshoring, logística, bodegas</div></div></div>
+      <div class="sector-card"><span class="sector-icon">⛽</span><div><div class="sector-name">Sector Energético</div><div class="sector-sub">Refinerías, plantas, subestaciones</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container cta-inner">
+    <h2>¿Cuánto estás pagando<br>de más cada mes?</h2>
+    <p>Un diagnóstico energético gratuito te muestra el potencial de ahorro real de tu planta antes de invertir un peso.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/525649470698?text=Hola,%20quiero%20un%20diagnóstico%20energético%20gratuito%20para%20mi%20planta%20en%20Sonora" class="btn-whatsapp" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp directo
+      </a>
+      <a href="#contacto" class="btn-primary">Solicitar diagnóstico</a>
+    </div>
+  </div>
+</section>
+
+<!-- FORM CONTACTO -->
+<section id="contacto" class="form-section">
+  <div class="container">
+    <div class="form-grid">
+      <div class="form-info">
+        <div class="section-label">Contacto</div>
+        <div class="divider-line"></div>
+        <h3>Solicita tu diagnóstico energético gratuito</h3>
+        <p>Cuéntanos sobre tu planta y te contactamos en menos de 24 horas con una evaluación preliminar de ahorro potencial.</p>
+        <ul class="form-benefits">
+          <li>Sin costo ni compromiso</li>
+          <li>Respuesta en menos de 24 horas</li>
+          <li>Ingenieros especializados en Sonora</li>
+          <li>Análisis con datos reales de tu factura CFE</li>
+          <li>Estimación de ahorro mensual desde el primer contacto</li>
+        </ul>
+      </div>
+      <div>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="text" name="empresa" placeholder="Empresa / Planta" required>
+          </div>
+          <div class="form-row">
+            <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required>
+            <input type="email" name="correo" placeholder="Correo electrónico" required>
+          </div>
+          <select name="sector" required>
+            <option value="" disabled selected>Sector industrial</option>
+            <option>Agroindustria / Empacadora</option>
+            <option>Industria alimentaria</option>
+            <option>Acuacultura</option>
+            <option>Manufactura / Maquila</option>
+            <option>Parque industrial</option>
+            <option>Sector energético</option>
+            <option>Otro</option>
+          </select>
+          <select name="consumo">
+            <option value="" disabled selected>Consumo eléctrico mensual estimado</option>
+            <option>Menos de $50,000 MXN</option>
+            <option>$50,000 — $150,000 MXN</option>
+            <option>$150,000 — $500,000 MXN</option>
+            <option>Más de $500,000 MXN</option>
+            <option>No lo sé / necesito orientación</option>
+          </select>
+          <textarea name="mensaje" placeholder="Descripción breve de tu instalación o problemática energética (opcional)"></textarea>
+          <button type="submit" class="form-submit">Solicitar diagnóstico gratuito →</button>
+          <p class="form-note">Tus datos son confidenciales. Solo se usarán para contactarte.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-label">Preguntas frecuentes</div>
+    <div class="divider-line"></div>
+    <h2 class="section-title">Lo que más<br><em>nos preguntan</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Cuánto cuesta una auditoría energética industrial? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">El costo varía según el tamaño de la instalación y la profundidad del análisis. Para plantas medianas en Sonora, el rango es de $15,000 a $60,000 MXN. Sin embargo, el ahorro identificado típicamente supera el costo de la auditoría en el primer mes de implementación. Ofrecemos un diagnóstico inicial gratuito para estimar el potencial.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Qué tan rápido veo resultados? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">Hay acciones de ahorro inmediato, como la optimización tarifaria o el ajuste de factor de potencia, que se reflejan en la primera factura CFE después de implementarse — generalmente 2 a 4 semanas. Los proyectos de instalación solar o automatización tienen un horizonte de 2 a 6 meses para implementación completa.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Qué es el Código de Red y por qué me afecta? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">El Código de Red es la normativa técnica que regula la interconexión de instalaciones eléctricas a la red de CFE y CENACE en México. Toda instalación industrial con generación propia (solar, cogeneración) o alto consumo debe cumplirla. El incumplimiento puede generar penalizaciones económicas o desconexión de suministro.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿DICISA trabaja fuera de Hermosillo? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">Sí. Tenemos presencia operativa en Hermosillo, Guaymas, Navojoa, Caborca y todo el noroeste de México. Hemos ejecutado proyectos en Sonora, Sinaloa, Baja California y Ciudad de México. Atendemos clientes en el noroeste sin costo adicional de movilización para proyectos medianos y grandes.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Puedo implementar solar sin cambiar mi contrato con CFE? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">Sí, mediante el esquema de Net Metering (medición neta). Tu instalación solar se interconecta con la red de CFE y la energía que no consumes se inyecta a la red como crédito para futuras facturas. Nosotros gestionamos todos los trámites de interconexión ante CFE y CENACE.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="https://www.dicisa.net" class="footer-logo">DI<span>C</span>ISA</a>
+  <div class="footer-links">
+    <a href="https://www.dicisa.net">Inicio</a>
+    <a href="https://www.dicisa.net/automatizacion-industrial-sonora/">Automatización</a>
+    <a href="https://www.dicisa.net/refrigeracion-industrial-inteligente/">Refrigeración</a>
+    <a href="https://www.dicisa.net#contacto">Contacto</a>
+  </div>
+  <p class="footer-copy">© 2025 DICISA — Hermosillo, Sonora, México</p>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const nombre = data.get('nombre');
+  const empresa = data.get('empresa');
+  const telefono = data.get('telefono');
+  const sector = data.get('sector');
+  const msg = `Hola, me interesa un diagnóstico energético gratuito.%0ANombre: ${nombre}%0AEmpresa: ${empresa}%0ATeléfono: ${telefono}%0ASector: ${sector}`;
+  window.open(`https://wa.me/525649470698?text=${msg}`, '_blank');
+}
+</script>
+</body>
+</html>
