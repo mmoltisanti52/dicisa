@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refrigeración Industrial Inteligente en Sonora — Cadena Fría — DICISA</title>
+  <meta name="description" content="Sistemas de refrigeración industrial inteligente para cadena fría, cuartos fríos, acuacultura y agroindustria en Sonora. Control automatizado de temperatura, monitoreo IoT y eficiencia energética.">
+  <meta name="keywords" content="refrigeración industrial Sonora, cuartos fríos Hermosillo, cadena fría agroindustria, HVAC industrial Sonora, refrigeración acuacultura camarón, control temperatura plantas alimentarias, DICISA refrigeración">
+  <link rel="canonical" href="https://www.dicisa.net/refrigeracion-industrial-inteligente/">
+  <meta property="og:title" content="Refrigeración Industrial Inteligente — Cadena Fría Sonora — DICISA">
+  <meta property="og:description" content="Control inteligente de refrigeración para cadena fría, cuartos fríos y HVAC industrial en Sonora. IoT, automatización y eficiencia energética.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.dicisa.net/refrigeracion-industrial-inteligente/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Refrigeración Industrial Inteligente",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "DICISA — Diseño Civil Sustentable",
+      "url": "https://www.dicisa.net",
+      "telephone": "+525649470698",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hermosillo",
+        "addressRegion": "Sonora",
+        "addressCountry": "MX"
+      },
+      "areaServed": ["Hermosillo", "Guaymas", "Navojoa", "Caborca", "Sonora"]
+    },
+    "description": "Sistemas de refrigeración industrial inteligente con control automatizado, monitoreo IoT y eficiencia energética para cadena fría, cuartos fríos, acuacultura y agroindustria en Sonora.",
+    "serviceType": "Refrigeración Industrial y Cadena Fría",
+    "areaServed": "Sonora, México"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #030d14;
+      --bg2: #051018;
+      --bg3: #071420;
+      --accent: #00c8f0;
+      --accent2: #0072f5;
+      --accent-soft: rgba(0,200,240,0.12);
+      --text: #e2f0f8;
+      --muted: #5a7a8a;
+      --border: rgba(0,200,240,0.1);
+      --card: rgba(0,200,240,0.04);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(3,13,20,0.95); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border); padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    .nav-logo { font-family: 'DM Mono', monospace; font-weight: 500; font-size: 1rem; color: var(--text); text-decoration: none; letter-spacing: 0.06em; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { background: transparent; color: var(--accent); border: 1px solid var(--accent); font-weight: 600; font-size: 0.85rem; padding: 8px 20px; border-radius: 4px; text-decoration: none; transition: all 0.2s; }
+    .nav-cta:hover { background: var(--accent); color: #030d14; }
+
+    /* HERO */
+    .hero { min-height: 100vh; display: flex; align-items: center; padding: 100px 2rem 4rem; position: relative; overflow: hidden; }
+    .hero-bg-circles {
+      position: absolute; inset: 0; overflow: hidden;
+    }
+    .circle {
+      position: absolute; border-radius: 50%;
+      border: 1px solid rgba(0,200,240,0.06);
+    }
+    .c1 { width: 600px; height: 600px; top: 50%; left: 60%; transform: translate(-50%,-50%); }
+    .c2 { width: 900px; height: 900px; top: 50%; left: 60%; transform: translate(-50%,-50%); }
+    .c3 { width: 1200px; height: 1200px; top: 50%; left: 60%; transform: translate(-50%,-50%); }
+    .hero-glow { position: absolute; top: -100px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(0,200,240,0.08) 0%, transparent 60%); pointer-events: none; }
+    .hero-content { max-width: 1100px; margin: 0 auto; width: 100%; position: relative; z-index: 2; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; }
+    .hero-badge { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--accent); display: flex; align-items: center; gap: 8px; margin-bottom: 1.5rem; animation: fadeIn 0.5s ease both; }
+    .badge-line { width: 30px; height: 1px; background: var(--accent); }
+    h1 { font-size: clamp(2.4rem, 4.5vw, 4.2rem); font-weight: 700; line-height: 1.08; animation: fadeIn 0.5s 0.1s ease both; }
+    h1 em { font-style: normal; color: var(--accent); }
+    .hero-sub { font-size: 1rem; color: var(--muted); margin: 1.5rem 0 2.5rem; line-height: 1.8; max-width: 480px; animation: fadeIn 0.5s 0.2s ease both; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeIn 0.5s 0.3s ease both; }
+    .btn-primary { background: var(--accent); color: #030d14; font-weight: 700; font-size: 0.95rem; padding: 13px 28px; border-radius: 4px; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; }
+    .btn-primary:hover { opacity: 0.87; transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--text); font-weight: 600; font-size: 0.95rem; padding: 12px 28px; border-radius: 4px; text-decoration: none; border: 1px solid rgba(255,255,255,0.12); cursor: pointer; transition: all 0.2s; }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* TEMP MONITOR WIDGET */
+    .temp-monitor { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; animation: fadeIn 0.5s 0.15s ease both; }
+    .tm-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+    .tm-title { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--muted); }
+    .tm-status { font-size: 0.72rem; background: rgba(0,200,240,0.1); color: var(--accent); border: 1px solid rgba(0,200,240,0.2); padding: 3px 10px; border-radius: 2px; display: flex; align-items: center; gap: 6px; }
+    .status-dot { width: 5px; height: 5px; background: var(--accent); border-radius: 50%; animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
+    .tm-zones { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.5rem; }
+    .tm-zone { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; }
+    .zone-name { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--muted); margin-bottom: 4px; }
+    .zone-temp { font-size: 1.8rem; font-weight: 700; line-height: 1; }
+    .zone-temp.cold { color: var(--accent); }
+    .zone-temp.normal { color: #4ec94e; }
+    .zone-temp.warn { color: #ffd166; }
+    .zone-status { font-size: 0.7rem; color: var(--muted); margin-top: 4px; }
+    .tm-graph { margin-bottom: 1rem; }
+    .tm-graph-title { font-family: 'DM Mono', monospace; font-size: 0.68rem; color: var(--muted); margin-bottom: 8px; }
+    .tm-bars { display: flex; align-items: flex-end; gap: 4px; height: 60px; }
+    .tm-bar { flex: 1; border-radius: 2px 2px 0 0; transition: height 0.3s; }
+    .tm-savings { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; padding-top: 1rem; border-top: 1px solid var(--border); }
+    .tm-save-item { text-align: center; }
+    .tm-save-val { font-family: 'DM Mono', monospace; font-size: 1rem; font-weight: 500; color: var(--accent); }
+    .tm-save-lbl { font-size: 0.65rem; color: var(--muted); margin-top: 2px; }
+
+    @keyframes fadeIn { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+    .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
+    .section-title { font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; }
+    .section-title em { font-style: normal; color: var(--accent); }
+    .section-sub { font-size: 1rem; color: var(--muted); max-width: 540px; line-height: 1.8; }
+
+    /* DOLOR */
+    .dolor { background: var(--bg2); }
+    .dolor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 3rem; }
+    .dolor-items { display: flex; flex-direction: column; gap: 1rem; }
+    .dolor-item { background: var(--card); border: 1px solid var(--border); border-left: 2px solid rgba(0,200,240,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; }
+    .dolor-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+    .dolor-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+    .dolor-stat { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+    .ds-item { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .ds-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .ds-label { font-size: 0.88rem; color: var(--muted); }
+    .ds-val { font-family: 'DM Mono', monospace; font-size: 1.5rem; font-weight: 500; color: var(--accent); }
+
+    /* SERVICIOS */
+    .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .servicio-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; transition: all 0.3s; position: relative; overflow: hidden; }
+    .servicio-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+    .servicio-card:hover::after { transform: scaleX(1); }
+    .servicio-card:hover { background: rgba(0,200,240,0.06); border-color: rgba(0,200,240,0.25); }
+    .servicio-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .servicio-title { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.75rem; }
+    .servicio-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+    .servicio-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font-family: 'DM Mono', monospace; font-size: 0.68rem; padding: 3px 9px; border-radius: 2px; background: rgba(0,200,240,0.08); color: var(--accent); border: 1px solid rgba(0,200,240,0.15); }
+
+    /* PROCESO */
+    .proceso { background: var(--bg2); }
+    .proceso-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; margin-top: 3rem; position: relative; }
+    .paso { padding: 2rem 1.5rem; border-right: 1px solid var(--border); }
+    .paso:last-child { border-right: none; }
+    .paso-num { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--accent); margin-bottom: 1rem; }
+    .paso-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .paso-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
+    .paso-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+
+    /* SECTORES */
+    .sectores-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .sector-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem 2rem; }
+    .sector-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
+    .sector-icon { font-size: 2rem; }
+    .sector-name { font-weight: 700; font-size: 1rem; }
+    .sector-items { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .sector-items li { font-size: 0.85rem; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+    .sector-items li::before { content: '—'; color: var(--accent); font-size: 0.75rem; }
+
+    /* CTA */
+    .cta-section { position: relative; overflow: hidden; }
+    .cta-glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 300px; background: radial-gradient(ellipse, rgba(0,200,240,0.1) 0%, transparent 65%); pointer-events: none; }
+    .cta-inner { text-align: center; position: relative; z-index: 2; }
+    .cta-inner h2 { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 1rem; }
+    .cta-inner h2 em { font-style: normal; color: var(--accent); }
+    .cta-inner p { font-size: 1rem; color: var(--muted); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.8; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-whatsapp { background: #25D366; color: #fff; font-weight: 700; font-size: 0.95rem; padding: 13px 28px; border-radius: 4px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: opacity 0.2s; }
+    .btn-whatsapp:hover { opacity: 0.87; }
+
+    /* FORM */
+    .form-section { background: var(--bg2); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .form-info h3 { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+    .form-info p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
+    .form-benefits { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .form-benefits li { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--muted); }
+    .form-benefits li::before { content: '✓'; color: var(--accent); font-weight: 700; }
+    form { display: flex; flex-direction: column; gap: 1rem; }
+    input, select, textarea { background: rgba(0,200,240,0.04); border: 1px solid var(--border); color: var(--text); border-radius: 4px; padding: 12px 16px; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; width: 100%; transition: border-color 0.2s; }
+    input::placeholder, textarea::placeholder { color: var(--muted); }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+    select option { background: #051018; }
+    textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-submit { background: var(--accent); color: #030d14; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 1rem; padding: 14px; border-radius: 4px; border: none; cursor: pointer; transition: opacity 0.2s; }
+    .form-submit:hover { opacity: 0.87; }
+    .form-note { font-size: 0.78rem; color: var(--muted); text-align: center; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 1px; margin-top: 3rem; }
+    .faq-item { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 6px; }
+    .faq-q { width: 100%; text-align: left; background: var(--card); border: none; color: var(--text); padding: 1.2rem 1.5rem; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.2s; }
+    .faq-q:hover { background: rgba(0,200,240,0.06); }
+    .faq-q .faq-arrow { color: var(--accent); transition: transform 0.3s; flex-shrink: 0; font-size: 1.2rem; }
+    .faq-a { display: none; padding: 0 1.5rem 1.2rem; font-size: 0.9rem; color: var(--muted); line-height: 1.7; background: var(--card); }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-arrow { transform: rotate(45deg); }
+
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: 'DM Mono', monospace; font-weight: 500; color: var(--text); text-decoration: none; letter-spacing: 0.06em; }
+    .footer-logo span { color: var(--accent); }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a { font-size: 0.85rem; color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy { font-size: 0.8rem; color: var(--muted); }
+
+    @media (max-width: 900px) {
+      .hero-content, .dolor-grid, .form-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .nav-links { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      .proceso-grid { grid-template-columns: 1fr 1fr; }
+      .paso { border-right: none; border-bottom: 1px solid var(--border); }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://www.dicisa.net" class="nav-logo">DI<span>C</span>ISA</a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#sectores">Sectores</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta">Diagnóstico gratuito</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-circles">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+    <div class="circle c3"></div>
+  </div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge"><span class="badge-line"></span>refrigeración industrial inteligente · Sonora</div>
+      <h1>Cadena fría<br><em>sin fallas,</em><br>sin pérdidas</h1>
+      <p class="hero-sub">Control automatizado de temperatura, monitoreo IoT 24/7 y eficiencia energética real para cuartos fríos, cámaras de conservación y sistemas HVAC industrial en Sonora.</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn-primary">Diagnóstico gratuito →</a>
+        <a href="https://wa.me/525649470698?text=Hola,%20me%20interesa%20una%20solución%20de%20refrigeración%20industrial%20inteligente" class="btn-ghost" target="_blank">Hablar con un ingeniero</a>
+      </div>
+    </div>
+    <div class="temp-monitor">
+      <div class="tm-header">
+        <span class="tm-title">MONITOR TEMP — PLANTA 01</span>
+        <span class="tm-status"><span class="status-dot"></span>EN VIVO</span>
+      </div>
+      <div class="tm-zones">
+        <div class="tm-zone">
+          <div class="zone-name">CÁMARA_FRÍA_A</div>
+          <div class="zone-temp cold">−18.4°C</div>
+          <div class="zone-status">✓ En rango · Congelación</div>
+        </div>
+        <div class="tm-zone">
+          <div class="zone-name">CÁMARA_FRÍA_B</div>
+          <div class="zone-temp cold">−18.1°C</div>
+          <div class="zone-status">✓ En rango · Congelación</div>
+        </div>
+        <div class="tm-zone">
+          <div class="zone-name">ÁREA_PROCESO</div>
+          <div class="zone-temp normal">+4.2°C</div>
+          <div class="zone-status">✓ En rango · Refrigeración</div>
+        </div>
+        <div class="tm-zone">
+          <div class="zone-name">COMPRESOR_01</div>
+          <div class="zone-temp warn">85.6% ef.</div>
+          <div class="zone-status">⚠ Revisión recomendada</div>
+        </div>
+      </div>
+      <div class="tm-graph">
+        <div class="tm-graph-title">Consumo energético sistema — últimas 8 horas</div>
+        <div class="tm-bars">
+          <div class="tm-bar" style="height:45%;background:rgba(0,200,240,0.4);"></div>
+          <div class="tm-bar" style="height:52%;background:rgba(0,200,240,0.4);"></div>
+          <div class="tm-bar" style="height:48%;background:rgba(0,200,240,0.4);"></div>
+          <div class="tm-bar" style="height:60%;background:rgba(0,200,240,0.5);"></div>
+          <div class="tm-bar" style="height:55%;background:rgba(0,200,240,0.4);"></div>
+          <div class="tm-bar" style="height:38%;background:rgba(0,200,240,0.6);"></div>
+          <div class="tm-bar" style="height:42%;background:rgba(0,200,240,0.55);"></div>
+          <div class="tm-bar" style="height:36%;background:var(--accent);"></div>
+        </div>
+      </div>
+      <div class="tm-savings">
+        <div class="tm-save-item">
+          <div class="tm-save-val">−32%</div>
+          <div class="tm-save-lbl">Ahorro energía</div>
+        </div>
+        <div class="tm-save-item">
+          <div class="tm-save-val">0</div>
+          <div class="tm-save-lbl">Alertas activas</div>
+        </div>
+        <div class="tm-save-item">
+          <div class="tm-save-val">99.7%</div>
+          <div class="tm-save-lbl">Uptime sistema</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOLOR -->
+<section class="dolor">
+  <div class="container">
+    <div class="section-label">El problema real</div>
+    <h2 class="section-title">La refrigeración<br><em>convencional te cuesta</em><br>más de lo que crees</h2>
+    <div class="dolor-grid">
+      <div class="dolor-items">
+        <div class="dolor-item">
+          <div class="dolor-title">⚡ Hasta el 60% de tu factura eléctrica</div>
+          <div class="dolor-desc">Los sistemas de refrigeración y HVAC representan la mayor carga energética en agroindustria y cadena fría. Sin optimización inteligente, ese gasto es constante e innecesariamente alto.</div>
+        </div>
+        <div class="dolor-item">
+          <div class="dolor-title">🌡️ Variaciones de temperatura que arruinan producto</div>
+          <div class="dolor-desc">Un fallo de temperatura no detectado a tiempo puede significar la pérdida de toneladas de producto. Sin monitoreo continuo, el riesgo existe las 24 horas del día.</div>
+        </div>
+        <div class="dolor-item">
+          <div class="dolor-title">🔧 Mantenimiento reactivo = paros costosos</div>
+          <div class="dolor-desc">Cuando un compresor falla sin aviso, el paro detiene la operación completa. El mantenimiento preventivo y predictivo elimina el 80% de estas situaciones.</div>
+        </div>
+        <div class="dolor-item">
+          <div class="dolor-title">📋 Sin trazabilidad de temperatura</div>
+          <div class="dolor-desc">Las normas de inocuidad alimentaria (FSMA, BRC, HACCP) exigen registros continuos de temperatura. El registro manual genera brechas que pueden costar certificaciones y mercados.</div>
+        </div>
+      </div>
+      <div class="dolor-stat">
+        <div class="ds-item">
+          <span class="ds-label">Consumo promedio de refrigeración en agroindustria</span>
+          <span class="ds-val">~60%</span>
+        </div>
+        <div class="ds-item">
+          <span class="ds-label">Pérdida de producto por fallo térmico no detectado</span>
+          <span class="ds-val">$200K+</span>
+        </div>
+        <div class="ds-item">
+          <span class="ds-label">Ahorro energético con control inteligente de refrigeración</span>
+          <span class="ds-val">20–35%</span>
+        </div>
+        <div class="ds-item">
+          <span class="ds-label">Reducción de paros con mantenimiento predictivo</span>
+          <span class="ds-val">−80%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="container">
+    <div class="section-label">Lo que hacemos</div>
+    <h2 class="section-title">Refrigeración<br><em>que sí funciona</em></h2>
+    <p class="section-sub">Integramos ingeniería de refrigeración, automatización y monitoreo IoT en una solución completa para tu operación industrial.</p>
+    <div class="servicios-grid">
+      <div class="servicio-card">
+        <div class="servicio-icon">🏗️</div>
+        <div class="servicio-title">Diseño y Construcción de Cuartos Fríos</div>
+        <div class="servicio-desc">Diseño e instalación llave en mano de cámaras de refrigeración y congelación para agroindustria, carnes, mariscos, frutas y vegetales. Desde el estudio de carga hasta la puesta en marcha.</div>
+        <div class="servicio-tags"><span class="tag">Cálculo carga térmica</span><span class="tag">Paneles SIP</span><span class="tag">Equipos Bitzer/Copeland</span></div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon">🤖</div>
+        <div class="servicio-title">Automatización y Control de Temperatura</div>
+        <div class="servicio-desc">Implementación de controladores automáticos de temperatura con setpoints precisos, gestión de defrost, control de válvulas de expansión electrónica y optimización de compresores.</div>
+        <div class="servicio-tags"><span class="tag">Carel / Danfoss</span><span class="tag">PLC refrigeración</span><span class="tag">Válvulas EEV</span></div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon">📡</div>
+        <div class="servicio-title">Monitoreo IoT 24/7 con Alertas</div>
+        <div class="servicio-desc">Sensores de temperatura y humedad conectados a plataforma en la nube. Dashboard web accesible desde cualquier dispositivo. Alertas automáticas por WhatsApp cuando la temperatura sale de rango.</div>
+        <div class="servicio-tags"><span class="tag">Dashboard web</span><span class="tag">Alertas WhatsApp</span><span class="tag">Registros automáticos</span></div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon">⚡</div>
+        <div class="servicio-title">Optimización Energética de Sistemas de Frío</div>
+        <div class="servicio-desc">Análisis del consumo de compresores, condensadores y manejadoras de aire. Instalación de variadores de frecuencia, optimización de ciclos y ajuste de setpoints para reducir hasta un 35% el consumo.</div>
+        <div class="servicio-tags"><span class="tag">Variadores VFD</span><span class="tag">Free cooling</span><span class="tag">Optimización ciclos</span></div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon">🔧</div>
+        <div class="servicio-title">Mantenimiento Preventivo y Predictivo</div>
+        <div class="servicio-desc">Plan de mantenimiento basado en datos de operación real. Análisis de vibración en compresores, análisis de aceite y seguimiento de parámetros termodinámicos para anticipar fallas antes de que ocurran.</div>
+        <div class="servicio-tags"><span class="tag">Análisis vibración</span><span class="tag">Análisis aceite</span><span class="tag">OEE refrigeración</span></div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon">📋</div>
+        <div class="servicio-title">Trazabilidad para Inocuidad Alimentaria</div>
+        <div class="servicio-desc">Registros automáticos de temperatura para cumplimiento de FSMA, BRC, HACCP y NOM-251. Reportes listos para auditoría generados automáticamente. Elimina el riesgo de brechas en el registro manual.</div>
+        <div class="servicio-tags"><span class="tag">FSMA / BRC</span><span class="tag">HACCP</span><span class="tag">NOM-251</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso" class="proceso">
+  <div class="container">
+    <div class="section-label">Cómo trabajamos</div>
+    <h2 class="section-title">De la evaluación<br><em>al resultado</em></h2>
+    <div class="proceso-grid">
+      <div class="paso">
+        <div class="paso-num">// 01</div>
+        <div class="paso-icon">🔍</div>
+        <div class="paso-title">Diagnóstico técnico</div>
+        <div class="paso-desc">Evaluación del sistema de refrigeración existente: equipos, consumo, temperatura real vs. setpoint, eficiencia de compresores.</div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">// 02</div>
+        <div class="paso-icon">📐</div>
+        <div class="paso-title">Ingeniería de solución</div>
+        <div class="paso-desc">Diseño técnico de mejoras: automatización, sensores, variadores, software de monitoreo. Presupuesto detallado con ROI.</div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">// 03</div>
+        <div class="paso-icon">⚙️</div>
+        <div class="paso-title">Implementación</div>
+        <div class="paso-desc">Instalación con mínima afectación a la operación. Integramos en turnos o ventanas de mantenimiento programadas.</div>
+      </div>
+      <div class="paso">
+        <div class="paso-num">// 04</div>
+        <div class="paso-icon">📊</div>
+        <div class="paso-title">Monitoreo y mejora</div>
+        <div class="paso-desc">Dashboard en vivo, alertas automáticas y reportes mensuales. Tu sistema mejora continuamente con los datos de operación real.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORES -->
+<section id="sectores">
+  <div class="container">
+    <div class="section-label">Industrias que atendemos</div>
+    <h2 class="section-title">Especialistas en tu<br><em>cadena de frío</em></h2>
+    <div class="sectores-grid">
+      <div class="sector-card">
+        <div class="sector-header"><span class="sector-icon">🦐</span><span class="sector-name">Acuacultura</span></div>
+        <ul class="sector-items">
+          <li>Granjas camaroneras en Sonora y Sinaloa</li>
+          <li>Plantas de proceso y empaque</li>
+          <li>Cuartos de congelación de marisco</li>
+          <li>Trazabilidad de temperatura para exportación</li>
+        </ul>
+      </div>
+      <div class="sector-card">
+        <div class="sector-header"><span class="sector-icon">🥩</span><span class="sector-name">Carnes y Rastros</span></div>
+        <ul class="sector-items">
+          <li>Rastros TIF — cámaras de oreo y congelación</li>
+          <li>Procesadoras de carne y embutidos</li>
+          <li>Control HACCP automático</li>
+          <li>Registros para NOM-194 y exportación</li>
+        </ul>
+      </div>
+      <div class="sector-card">
+        <div class="sector-header"><span class="sector-icon">🌾</span><span class="sector-name">Agroindustria</span></div>
+        <ul class="sector-items">
+          <li>Empacadoras de frutas y verduras</li>
+          <li>Almacenamiento frigorífico</li>
+          <li>Pre-enfriamiento y hidrocooling</li>
+          <li>Cámaras de atmósfera controlada</li>
+        </ul>
+      </div>
+      <div class="sector-card">
+        <div class="sector-header"><span class="sector-icon">🏭</span><span class="sector-name">Alimentos y Bebidas</span></div>
+        <ul class="sector-items">
+          <li>Plantas de proceso de alimentos</li>
+          <li>Cuartos de fermentación controlada</li>
+          <li>Distribución de cadena fría</li>
+          <li>Certificación BRC, IFS, FSMA</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <div class="container">
+    <div class="cta-inner">
+      <h2>¿Tu sistema de frío<br>está <em>trabajando en tu contra?</em></h2>
+      <p>Un diagnóstico gratuito te muestra cuánto estás perdiendo en energía y cuánto riesgo tiene tu cadena fría hoy.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/525649470698?text=Hola,%20me%20interesa%20una%20solución%20de%20refrigeración%20industrial%20inteligente%20para%20mi%20planta" class="btn-whatsapp" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp directo
+        </a>
+        <a href="#contacto" class="btn-primary">Solicitar diagnóstico</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section id="contacto" class="form-section">
+  <div class="container">
+    <div class="form-grid">
+      <div class="form-info">
+        <div class="section-label">Contacto</div>
+        <h3>Solicita tu diagnóstico de refrigeración gratuito</h3>
+        <p>Cuéntanos sobre tu sistema actual y tu industria. Te contactamos en menos de 24 horas con una evaluación técnica preliminar y potencial de ahorro real.</p>
+        <ul class="form-benefits">
+          <li>Sin costo ni compromiso</li>
+          <li>Ingenieros especializados en sistemas de frío</li>
+          <li>Cobertura en todo Sonora y noroeste de México</li>
+          <li>Experiencia en acuacultura, carnes, agroindustria y alimentos</li>
+          <li>Diagnóstico con datos reales de tu sistema</li>
+        </ul>
+      </div>
+      <div>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="text" name="empresa" placeholder="Empresa / Planta" required>
+          </div>
+          <div class="form-row">
+            <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required>
+            <input type="email" name="correo" placeholder="Correo electrónico" required>
+          </div>
+          <select name="industria" required>
+            <option value="" disabled selected>Tipo de industria</option>
+            <option>Acuacultura / Camarón</option>
+            <option>Carnes y rastros TIF</option>
+            <option>Empacadora de frutas y verduras</option>
+            <option>Alimentos procesados</option>
+            <option>Distribución cadena fría</option>
+            <option>Otro sector</option>
+          </select>
+          <select name="sistema">
+            <option value="" disabled selected>Sistema de refrigeración actual</option>
+            <option>Sistema industrial existente — quiero optimizarlo</option>
+            <option>Sistema sin automatización ni monitoreo</option>
+            <option>Proyecto nuevo — necesito diseño completo</option>
+            <option>Sistema con problemas de temperatura o consumo</option>
+          </select>
+          <textarea name="mensaje" placeholder="Describe brevemente tu sistema, número de cámaras, capacidad o problemas actuales (opcional)"></textarea>
+          <button type="submit" class="form-submit">Solicitar diagnóstico gratuito →</button>
+          <p class="form-note">Tus datos son confidenciales. Solo se usarán para contactarte.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-label">Preguntas frecuentes</div>
+    <h2 class="section-title">Lo que más<br><em>nos preguntan</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Pueden instalar monitoreo en un sistema de refrigeración que ya tengo? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">Sí, en la gran mayoría de los casos. Instalamos sensores IoT en sistemas existentes — cualquier marca, cualquier antigüedad — sin necesidad de modificar los equipos de refrigeración. El sistema de monitoreo se integra con lo que ya tienes y empieza a generar datos desde el primer día.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Cómo recibo las alertas de temperatura fuera de rango? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">Las alertas se envían automáticamente por WhatsApp, SMS o correo electrónico al personal que definas. Puedes configurar múltiples destinatarios con diferentes rangos de alerta — por ejemplo, el operador recibe la primera alerta y el gerente recibe una segunda si no hay respuesta en 15 minutos.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Los registros de temperatura sirven para auditorías de certificación? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">Sí. El sistema genera reportes automáticos de temperatura con marca de tiempo, firma digital y trazabilidad completa. Son aceptados por auditores de BRC, IFS, FSMA y NOM-251. Eliminas completamente el riesgo de brechas en registros manuales.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Cuánto ahorro puedo esperar en mi factura eléctrica? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">En proyectos de optimización de refrigeración industrial en Sonora hemos logrado ahorros de entre el 20% y el 35% del consumo eléctrico del sistema de frío. Los factores principales son la instalación de variadores de frecuencia en compresores y ventiladores, optimización del ciclo de defrost y ajuste de setpoints. El diagnóstico gratuito incluye una estimación basada en tus datos reales.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Trabajan en ciudades fuera de Hermosillo? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">Sí. Tenemos presencia operativa en todo el noroeste de México: Guaymas, Navojoa, Obregón, Caborca, Los Mochis, Mazatlán y Baja California. Hemos ejecutado proyectos de refrigeración para acuicultura en el litoral de Sonora y Sinaloa, así como para agroindustria en el Valle del Yaqui y Mayo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="https://www.dicisa.net" class="footer-logo">DI<span>C</span>ISA</a>
+  <div class="footer-links">
+    <a href="https://www.dicisa.net">Inicio</a>
+    <a href="https://www.dicisa.net/eficiencia-energetica-industrial/">Eficiencia Energética</a>
+    <a href="https://www.dicisa.net/automatizacion-industrial-sonora/">Automatización</a>
+    <a href="https://www.dicisa.net#contacto">Contacto</a>
+  </div>
+  <p class="footer-copy">© 2025 DICISA — Hermosillo, Sonora, México</p>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+function handleSubmit(e) {
+  e.preventDefault();
+  const data = new FormData(e.target);
+  const msg = `Hola, me interesa refrigeración industrial inteligente.%0ANombre: ${data.get('nombre')}%0AEmpresa: ${data.get('empresa')}%0AIndustria: ${data.get('industria')}`;
+  window.open(`https://wa.me/525649470698?text=${msg}`, '_blank');
+}
+</script>
+</body>
+</html>
