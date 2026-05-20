@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automatización Industrial en Sonora — PLC, SCADA, IoT — DICISA</title>
+  <meta name="description" content="Automatización industrial PLC, SCADA, IoT y monitoreo remoto para plantas en Hermosillo y Sonora. Reducimos paros, mejoramos eficiencia y entregamos dashboards de operación en tiempo real.">
+  <meta name="keywords" content="automatización industrial Sonora, PLC SCADA Hermosillo, IoT industrial agroindustria, monitoreo remoto planta, automatización HVAC Sonora, DICISA automatización">
+  <link rel="canonical" href="https://www.dicisa.net/automatizacion-industrial-sonora/">
+  <meta property="og:title" content="Automatización Industrial Sonora — PLC, SCADA, IoT — DICISA">
+  <meta property="og:description" content="Automatización industrial, PLC, SCADA e IIoT para plantas en Sonora. Monitoreo remoto y dashboards en tiempo real.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.dicisa.net/automatizacion-industrial-sonora/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Automatización Industrial — PLC, SCADA, IoT",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "DICISA — Diseño Civil Sustentable",
+      "url": "https://www.dicisa.net",
+      "telephone": "+525649470698",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hermosillo",
+        "addressRegion": "Sonora",
+        "addressCountry": "MX"
+      },
+      "areaServed": ["Hermosillo", "Guaymas", "Navojoa", "Caborca", "Sonora"]
+    },
+    "description": "Implementación de PLC, SCADA, HMI, IIoT y dashboards de control para reducir paros operativos y automatizar procesos industriales en Sonora.",
+    "serviceType": "Automatización Industrial",
+    "areaServed": "Sonora, México"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #08080d;
+      --bg2: #0c0c14;
+      --bg3: #0f0f18;
+      --accent: #ff6b2b;
+      --accent2: #ffd166;
+      --accent3: rgba(255,107,43,0.15);
+      --text: #f0eee8;
+      --muted: #7a7870;
+      --border: rgba(255,255,255,0.06);
+      --card: rgba(255,255,255,0.03);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Space Grotesk', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+ 
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(8,8,13,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    .nav-logo { font-family: 'Space Mono', monospace; font-weight: 700; font-size: 1rem; color: var(--text); text-decoration: none; letter-spacing: 0.1em; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { background: var(--accent); color: #fff; font-weight: 700; font-size: 0.85rem; padding: 8px 20px; border-radius: 4px; text-decoration: none; letter-spacing: 0.04em; transition: opacity 0.2s; }
+    .nav-cta:hover { opacity: 0.85; }
+ 
+    /* HERO */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 100px 2rem 4rem; position: relative; overflow: hidden;
+    }
+    .hero-noise {
+      position: absolute; inset: 0; opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+    .hero-lines {
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,107,43,0.04) 60px);
+    }
+    .hero-glow { position: absolute; top: -300px; left: 50%; transform: translateX(-50%); width: 800px; height: 600px; background: radial-gradient(ellipse, rgba(255,107,43,0.1) 0%, transparent 65%); pointer-events: none; }
+    .hero-content { max-width: 1100px; margin: 0 auto; width: 100%; position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .hero-left {}
+    .hero-badge {
+      font-family: 'Space Mono', monospace; font-size: 0.72rem;
+      color: var(--accent); background: rgba(255,107,43,0.1); border: 1px solid rgba(255,107,43,0.2);
+      padding: 6px 14px; display: inline-block; margin-bottom: 1.5rem;
+      animation: fadeUp 0.5s ease both;
+    }
+    h1 {
+      font-size: clamp(2.4rem, 4.5vw, 4rem); font-weight: 700; line-height: 1.1;
+      animation: fadeUp 0.5s 0.1s ease both;
+    }
+    h1 em { font-style: normal; color: var(--accent); }
+    .hero-sub { font-size: 1rem; color: var(--muted); margin: 1.5rem 0 2rem; line-height: 1.75; max-width: 480px; animation: fadeUp 0.5s 0.2s ease both; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 0.5s 0.3s ease both; }
+    .btn-primary { background: var(--accent); color: #fff; font-weight: 700; font-size: 0.95rem; padding: 13px 28px; border-radius: 4px; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; }
+    .btn-primary:hover { opacity: 0.87; transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--text); font-weight: 600; font-size: 0.95rem; padding: 12px 28px; border-radius: 4px; text-decoration: none; border: 1px solid var(--border); cursor: pointer; transition: all 0.2s; }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+ 
+    /* TERMINAL WIDGET */
+    .hero-terminal {
+      background: #0a0a10; border: 1px solid rgba(255,107,43,0.2); border-radius: 8px;
+      overflow: hidden; animation: fadeUp 0.5s 0.2s ease both;
+    }
+    .terminal-header { background: rgba(255,107,43,0.08); padding: 12px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid rgba(255,107,43,0.1); }
+    .terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .terminal-title { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--muted); margin-left: 4px; }
+    .terminal-body { padding: 1.5rem; font-family: 'Space Mono', monospace; font-size: 0.78rem; line-height: 1.8; }
+    .t-green { color: #4ec94e; }
+    .t-orange { color: var(--accent); }
+    .t-blue { color: #5ab4f5; }
+    .t-gray { color: var(--muted); }
+    .t-white { color: var(--text); }
+    .terminal-cursor { display: inline-block; width: 8px; height: 14px; background: var(--accent); animation: blink 1.2s step-end infinite; vertical-align: text-bottom; }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+    .terminal-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+    .t-metric { background: rgba(255,107,43,0.06); border: 1px solid rgba(255,107,43,0.12); border-radius: 4px; padding: 0.75rem; }
+    .t-metric-val { font-size: 1.3rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 2px; }
+    .t-metric-lbl { font-size: 0.7rem; color: var(--muted); }
+ 
+    @keyframes fadeUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+ 
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1rem; }
+    .section-title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; }
+    .section-title em { font-style: normal; color: var(--accent); }
+    .section-sub { font-size: 1rem; color: var(--muted); max-width: 540px; line-height: 1.75; }
+    .divider-line { width: 40px; height: 2px; background: var(--accent); margin-bottom: 2rem; }
+ 
+    /* SERVICIOS */
+    .servicios { background: var(--bg2); }
+    .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: 3rem; }
+    .servicio-card { background: var(--bg2); padding: 2rem; transition: background 0.3s; position: relative; }
+    .servicio-card:hover { background: rgba(255,107,43,0.04); }
+    .servicio-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .servicio-title { font-weight: 700; font-size: 1.1rem; margin-bottom: 0.75rem; }
+    .servicio-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+    .servicio-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font-family: 'Space Mono', monospace; font-size: 0.68rem; padding: 3px 10px; border-radius: 2px; background: rgba(255,107,43,0.1); color: var(--accent); }
+ 
+    /* BENEFICIOS */
+    .beneficios-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 3rem; }
+    .beneficio-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .beneficio-item { display: flex; gap: 1.5rem; align-items: flex-start; }
+    .beneficio-num { font-family: 'Space Mono', monospace; font-size: 2rem; font-weight: 700; color: rgba(255,107,43,0.25); min-width: 50px; line-height: 1; }
+    .beneficio-title { font-weight: 600; font-size: 1rem; margin-bottom: 4px; }
+    .beneficio-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
+    .beneficio-visual {
+      background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 2rem;
+    }
+    .bv-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+    .bv-label { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--muted); min-width: 100px; }
+    .bv-bar-bg { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+    .bv-bar { height: 8px; border-radius: 4px; }
+    .bv-val { font-family: 'Space Mono', monospace; font-size: 0.72rem; color: var(--accent); min-width: 40px; text-align: right; }
+    .bv-title { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.08em; }
+    .bv-note { font-size: 0.78rem; color: var(--muted); margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); line-height: 1.6; }
+ 
+    /* TECNOLOGIAS */
+    .tecnologias { background: var(--bg2); }
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-top: 3rem; }
+    .tech-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+      padding: 1.5rem; text-align: center; transition: border-color 0.3s;
+    }
+    .tech-card:hover { border-color: rgba(255,107,43,0.3); }
+    .tech-logo { font-family: 'Space Mono', monospace; font-size: 1.3rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
+    .tech-name { font-size: 0.82rem; color: var(--muted); }
+ 
+    /* SECTORES */
+    .sectores-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 3rem; }
+    .sector-card { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; }
+    .sector-icon { font-size: 1.8rem; }
+    .sector-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+    .sector-sub { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+ 
+    /* CTA */
+    .cta-section { background: var(--bg3); border-top: 1px solid rgba(255,107,43,0.15); border-bottom: 1px solid rgba(255,107,43,0.15); }
+    .cta-inner { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+    .cta-inner h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; }
+    .cta-inner p { font-size: 1rem; color: var(--muted); margin-top: 0.75rem; }
+    .cta-actions { display: flex; flex-direction: column; gap: 1rem; }
+ 
+    /* FORM */
+    .form-section { background: var(--bg); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .form-info h3 { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+    .form-info p { font-size: 0.95rem; color: var(--muted); line-height: 1.7; margin-bottom: 2rem; }
+    .form-benefits { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .form-benefits li { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--muted); }
+    .form-benefits li::before { content: '→'; color: var(--accent); font-weight: 700; }
+    form { display: flex; flex-direction: column; gap: 1rem; }
+    input, select, textarea { background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--text); border-radius: 4px; padding: 12px 16px; font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; width: 100%; transition: border-color 0.2s; }
+    input::placeholder, textarea::placeholder { color: var(--muted); }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+    select option { background: #0c0c14; }
+    textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-submit { background: var(--accent); color: #fff; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1rem; padding: 14px; border-radius: 4px; border: none; cursor: pointer; transition: opacity 0.2s; }
+    .form-submit:hover { opacity: 0.87; }
+    .form-note { font-size: 0.78rem; color: var(--muted); text-align: center; }
+    .btn-whatsapp { background: #25D366; color: #fff; font-weight: 700; font-size: 0.95rem; padding: 13px 28px; border-radius: 4px; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: opacity 0.2s; }
+    .btn-whatsapp:hover { opacity: 0.87; }
+ 
+    /* FAQ */
+    .faq { background: var(--bg2); }
+    .faq-list { display: flex; flex-direction: column; gap: 1px; margin-top: 3rem; }
+    .faq-item { border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+    .faq-q { width: 100%; text-align: left; background: var(--card); border: none; color: var(--text); padding: 1.2rem 1.5rem; font-family: 'Space Grotesk', sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: background 0.2s; }
+    .faq-q:hover { background: rgba(255,107,43,0.05); }
+    .faq-q .faq-arrow { color: var(--accent); transition: transform 0.3s; flex-shrink: 0; font-size: 1.2rem; }
+    .faq-a { display: none; padding: 0 1.5rem 1.2rem; font-size: 0.9rem; color: var(--muted); line-height: 1.7; background: var(--card); }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-arrow { transform: rotate(45deg); }
+ 
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: 'Space Mono', monospace; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: 0.1em; }
+    .footer-logo span { color: var(--accent); }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a { font-size: 0.85rem; color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-copy { font-size: 0.8rem; color: var(--muted); }
+ 
+    @media (max-width: 900px) {
+      .hero-content, .beneficios-grid, .form-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .cta-inner { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+ 
+<nav>
+  <a href="https://www.dicisa.net" class="nav-logo">DI<span>C</span>ISA</a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#tecnologias">Tecnologías</a></li>
+    <li><a href="#sectores">Sectores</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta">Solicitar Demo</a>
+</nav>
+ 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">// automatización_industrial · sonora.mx</div>
+      <h1>Tu planta,<br>bajo <em>control<br>total</em></h1>
+      <p class="hero-sub">PLC, SCADA, IIoT y dashboards de operación en tiempo real para plantas industriales en Sonora. Menos paros. Más producción. Datos que importan.</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn-primary">Solicitar evaluación →</a>
+        <a href="https://wa.me/525649470698?text=Hola,%20me%20interesa%20automatizar%20mi%20planta%20industrial" class="btn-ghost" target="_blank">Hablar con un especialista</a>
+      </div>
+    </div>
+    <div class="hero-terminal">
+      <div class="terminal-header">
+        <div class="terminal-dot" style="background:#ff5f56;"></div>
+        <div class="terminal-dot" style="background:#ffbd2e;"></div>
+        <div class="terminal-dot" style="background:#27c93f;"></div>
+        <span class="terminal-title">// sistema_control.scada — EN VIVO</span>
+      </div>
+      <div class="terminal-body">
+        <div><span class="t-gray">$</span> <span class="t-green">conectando</span> <span class="t-orange">scada_planta_01</span></div>
+        <div><span class="t-gray">→</span> <span class="t-blue">PLC_SIEMENS_S7</span> <span class="t-green">OK</span></div>
+        <div><span class="t-gray">→</span> <span class="t-blue">SENSOR_TEMP_01</span> <span class="t-white">23.4°C</span> <span class="t-green">NORMAL</span></div>
+        <div><span class="t-gray">→</span> <span class="t-blue">MOTOR_COMPRESOR</span> <span class="t-white">87.3% ef.</span></div>
+        <div><span class="t-gray">→</span> <span class="t-blue">CONSUMO_KW</span> <span class="t-white">142 kW</span> <span class="t-green">ÓPTIMO</span></div>
+        <div><span class="t-gray">→</span> <span class="t-blue">ALERTA_VIBRACIÓN</span> <span class="t-orange">MONIT.</span></div>
+        <div><span class="t-gray">$</span> <span class="t-white">dashboard cargado </span><span class="terminal-cursor"></span></div>
+      </div>
+      <div class="terminal-metrics">
+        <div class="t-metric">
+          <div class="t-metric-val">98.6%</div>
+          <div class="t-metric-lbl">Uptime operativo</div>
+        </div>
+        <div class="t-metric">
+          <div class="t-metric-val">−28%</div>
+          <div class="t-metric-lbl">Paros no planeados</div>
+        </div>
+        <div class="t-metric">
+          <div class="t-metric-val">16ms</div>
+          <div class="t-metric-lbl">Latencia SCADA</div>
+        </div>
+        <div class="t-metric">
+          <div class="t-metric-val">24/7</div>
+          <div class="t-metric-lbl">Monitoreo remoto</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- SERVICIOS -->
+<section id="servicios" class="servicios">
+  <div class="container">
+    <div class="section-label">// servicios</div>
+    <div class="divider-line"></div>
+    <h2 class="section-title">Automatización<br><em>de extremo a extremo</em></h2>
+    <p class="section-sub">Desde el sensor hasta el dashboard gerencial — integramos cada capa de tu operación industrial.</p>
+    <div class="servicios-grid">
+      <div class="servicio-card">
+        <div class="servicio-icon">🔧</div>
+        <div class="servicio-title">Programación PLC / HMI</div>
+        <div class="servicio-desc">Programación y configuración de PLCs para automatizar procesos industriales. Lógica de control, secuencias, interlocks y alarmas. Compatible con Siemens, Allen-Bradley, Schneider y más.</div>
+        <div class="servicio-tags"><span class="tag">Siemens S7</span><span class="tag">Allen-Bradley</span><span class="tag">Modicon</span><span class="tag">Ladder/ST</span></div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon">🖥️</div>
+        <div class="servicio-title">SCADA y Supervisión Industrial</div>
+        <div class="servicio-desc">Sistemas SCADA para supervisión y control centralizado de tu planta. Visualización en tiempo real, historial de datos, alarmas y reportes automáticos para operadores y gerencia.</div>
+        <div class="servicio-tags"><span class="tag">WinCC</span><span class="tag">FactoryTalk</span><span class="tag">Ignition</span><span class="tag">OPC-UA</span></div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon">📡</div>
+        <div class="servicio-title">IIoT — Sensores Inteligentes</div>
+        <div class="servicio-desc">Instalación de sensores industriales IoT para temperatura, vibración, presión, flujo y consumo eléctrico. Conectividad industrial robusta para ambientes severos en agroindustria y manufactura.</div>
+        <div class="servicio-tags"><span class="tag">MQTT</span><span class="tag">Modbus</span><span class="tag">Ethernet/IP</span><span class="tag">4-20mA</span></div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon">❄️</div>
+        <div class="servicio-title">Automatización HVAC y Refrigeración</div>
+        <div class="servicio-desc">Control inteligente de sistemas de refrigeración, chillers, cámaras frías y HVAC industrial. Reducción de consumo energético y mantenimiento de temperatura precisa en procesos alimentarios.</div>
+        <div class="servicio-tags"><span class="tag">BACnet</span><span class="tag">Chillers</span><span class="tag">VFD</span><span class="tag">Setpoint IA</span></div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon">📊</div>
+        <div class="servicio-title">Dashboards Operativos e IA</div>
+        <div class="servicio-desc">Dashboards web personalizados con KPIs de producción, eficiencia y energía. Acceso desde cualquier dispositivo. Alertas automáticas por WhatsApp o email cuando algo sale de rango.</div>
+        <div class="servicio-tags"><span class="tag">Dashboard web</span><span class="tag">KPIs tiempo real</span><span class="tag">Alertas SMS</span></div>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-icon">🔮</div>
+        <div class="servicio-title">Mantenimiento Predictivo con IA</div>
+        <div class="servicio-desc">Análisis de datos de vibración, temperatura y consumo para predecir fallas antes de que ocurran. Extiende la vida útil de motores, compresores y equipos críticos. ROI comprobado en Sonora.</div>
+        <div class="servicio-tags"><span class="tag">Análisis vibración</span><span class="tag">ML anomalías</span><span class="tag">OEE</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- BENEFICIOS -->
+<section id="beneficios">
+  <div class="container">
+    <div class="section-label">// impacto_operativo</div>
+    <div class="divider-line"></div>
+    <h2 class="section-title">Lo que cambia<br><em>cuando automatizas</em></h2>
+    <div class="beneficios-grid">
+      <div class="beneficio-list">
+        <div class="beneficio-item">
+          <div class="beneficio-num">01</div>
+          <div>
+            <div class="beneficio-title">Menos paros no planeados</div>
+            <div class="beneficio-desc">El monitoreo continuo detecta anomalías antes de que se conviertan en fallas. Las plantas con mantenimiento predictivo reducen paros no planeados hasta un 45%.</div>
+          </div>
+        </div>
+        <div class="beneficio-item">
+          <div class="beneficio-num">02</div>
+          <div>
+            <div class="beneficio-title">Consumo energético optimizado</div>
+            <div class="beneficio-desc">La automatización de motores, compresores y HVAC con variadores de frecuencia y control inteligente reduce el consumo eléctrico entre un 15 y un 30%.</div>
+          </div>
+        </div>
+        <div class="beneficio-item">
+          <div class="beneficio-num">03</div>
+          <div>
+            <div class="beneficio-title">Visibilidad total de tu operación</div>
+            <div class="beneficio-desc">Desde tu teléfono o laptop, sabes qué pasa en tu planta en tiempo real: producción, temperatura, consumo, alarmas y OEE. Sin depender de reportes manuales.</div>
+          </div>
+        </div>
+        <div class="beneficio-item">
+          <div class="beneficio-num">04</div>
+          <div>
+            <div class="beneficio-title">Trazabilidad y cumplimiento</div>
+            <div class="beneficio-desc">Registros automáticos de condiciones de proceso para auditorías de calidad, inocuidad alimentaria (FSMA, BRC) y cumplimiento ambiental sin carga extra para el personal.</div>
+          </div>
+        </div>
+      </div>
+      <div class="beneficio-visual">
+        <div class="bv-title">mejora operativa estimada post-automatización</div>
+        <div class="bv-row">
+          <span class="bv-label">Uptime planta</span>
+          <div class="bv-bar-bg"><div class="bv-bar" style="width:92%;background:#ff6b2b;"></div></div>
+          <span class="bv-val">+32%</span>
+        </div>
+        <div class="bv-row">
+          <span class="bv-label">Ahorro energía</span>
+          <div class="bv-bar-bg"><div class="bv-bar" style="width:78%;background:#ff6b2b;"></div></div>
+          <span class="bv-val">+25%</span>
+        </div>
+        <div class="bv-row">
+          <span class="bv-label">Menos paros</span>
+          <div class="bv-bar-bg"><div class="bv-bar" style="width:85%;background:#ff6b2b;"></div></div>
+          <span class="bv-val">−45%</span>
+        </div>
+        <div class="bv-row">
+          <span class="bv-label">Costo mantenimiento</span>
+          <div class="bv-bar-bg"><div class="bv-bar" style="width:60%;background:#ff6b2b;"></div></div>
+          <span class="bv-val">−30%</span>
+        </div>
+        <div class="bv-row">
+          <span class="bv-label">Visibilidad operativa</span>
+          <div class="bv-bar-bg"><div class="bv-bar" style="width:100%;background:#ffd166;"></div></div>
+          <span class="bv-val">100%</span>
+        </div>
+        <div class="bv-note">Datos basados en proyectos de automatización industrial en el noroeste de México. Los resultados varían según el estado actual de la instalación.</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- TECNOLOGIAS -->
+<section id="tecnologias" class="tecnologias">
+  <div class="container">
+    <div class="section-label">// stack_tecnológico</div>
+    <div class="divider-line"></div>
+    <h2 class="section-title">Tecnologías que<br><em>realmente usamos</em></h2>
+    <div class="tech-grid">
+      <div class="tech-card"><div class="tech-logo">PLC</div><div class="tech-name">Siemens / Allen-Bradley / Schneider</div></div>
+      <div class="tech-card"><div class="tech-logo">SCADA</div><div class="tech-name">Ignition / WinCC / FactoryTalk</div></div>
+      <div class="tech-card"><div class="tech-logo">IoT</div><div class="tech-name">MQTT / Modbus / OPC-UA</div></div>
+      <div class="tech-card"><div class="tech-logo">HVAC</div><div class="tech-name">BACnet / LonWorks / VFD</div></div>
+      <div class="tech-card"><div class="tech-logo">BI</div><div class="tech-name">Power BI / Grafana / Dash</div></div>
+      <div class="tech-card"><div class="tech-logo">AI</div><div class="tech-name">ML anomalías / Predicción fallas</div></div>
+    </div>
+  </div>
+</section>
+ 
+<!-- SECTORES -->
+<section id="sectores">
+  <div class="container">
+    <div class="section-label">// sectores_objetivo</div>
+    <div class="divider-line"></div>
+    <h2 class="section-title">Industrias que<br><em>atendemos en Sonora</em></h2>
+    <div class="sectores-grid">
+      <div class="sector-card"><span class="sector-icon">🌾</span><div><div class="sector-name">Agroindustria</div><div class="sector-sub">Empacadoras, procesadoras, rastros TIF. Automatización de líneas y cadena fría.</div></div></div>
+      <div class="sector-card"><span class="sector-icon">🦐</span><div><div class="sector-name">Acuacultura</div><div class="sector-sub">Granjas camaroneras, plantas de proceso. Control de temperatura, aireación y procesado.</div></div></div>
+      <div class="sector-card"><span class="sector-icon">🍺</span><div><div class="sector-name">Bebidas y Alimentos</div><div class="sector-sub">Control de proceso, pasteurización, fermentación. Trazabilidad FSMA.</div></div></div>
+      <div class="sector-card"><span class="sector-icon">🏭</span><div><div class="sector-name">Manufactura / Maquila</div><div class="sector-sub">Automatización de líneas, robots, control de calidad. Nearshoring Sonora.</div></div></div>
+    </div>
+  </div>
+</section>
+ 
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner">
+      <div>
+        <h2>¿Cuánto produce tu planta<br>de lo que podría producir?</h2>
+        <p>Un análisis de tu operación actual revela exactamente dónde está el margen de mejora.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="https://wa.me/525649470698?text=Hola,%20me%20interesa%20automatización%20industrial%20para%20mi%20planta%20en%20Sonora" class="btn-whatsapp" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp ahora
+        </a>
+        <a href="#contacto" class="btn-primary">Solicitar evaluación</a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- FORM -->
+<section id="contacto" class="form-section">
+  <div class="container">
+    <div class="form-grid">
+      <div class="form-info">
+        <div class="section-label">// contacto</div>
+        <div class="divider-line"></div>
+        <h3>Solicita una evaluación técnica sin costo</h3>
+        <p>Revisamos tu operación actual e identificamos las oportunidades de automatización con mayor ROI para tu planta específica.</p>
+        <ul class="form-benefits">
+          <li>Evaluación preliminar gratuita</li>
+          <li>Especialistas en automatización industrial</li>
+          <li>Cobertura en todo Sonora y noroeste de México</li>
+          <li>Experiencia con Bachoco, Heineken, Maseca y más</li>
+          <li>Respuesta garantizada en 24 horas</li>
+        </ul>
+      </div>
+      <div>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+            <input type="text" name="empresa" placeholder="Empresa / Planta" required>
+          </div>
+          <div class="form-row">
+            <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required>
+            <input type="email" name="correo" placeholder="Correo electrónico" required>
+          </div>
+          <select name="proceso" required>
+            <option value="" disabled selected>Proceso a automatizar</option>
+            <option>Refrigeración / Cadena fría</option>
+            <option>Líneas de producción / Empaque</option>
+            <option>HVAC / Climatización</option>
+            <option>Monitoreo energético</option>
+            <option>Control de motores y variadores</option>
+            <option>Mantenimiento predictivo</option>
+            <option>No sé — necesito diagnóstico</option>
+          </select>
+          <select name="estado">
+            <option value="" disabled selected>Estado actual de automatización</option>
+            <option>Sin automatización — operación 100% manual</option>
+            <option>Automatización básica — sin SCADA ni monitoreo</option>
+            <option>Automatización parcial — quiero expandir</option>
+            <option>Sistema existente — necesito modernizar</option>
+          </select>
+          <textarea name="mensaje" placeholder="Descripción de tu proceso o problema operativo (opcional)"></textarea>
+          <button type="submit" class="form-submit">Solicitar evaluación técnica →</button>
+          <p class="form-note">Sin compromiso. Tus datos son confidenciales.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <div class="container">
+    <div class="section-label">// preguntas_frecuentes</div>
+    <div class="divider-line"></div>
+    <h2 class="section-title">Lo que más<br><em>nos preguntan</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Necesito parar mi planta para instalar automatización? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">En la mayoría de los casos, no. Diseñamos e implementamos los sistemas de automatización en fases, minimizando el impacto en la producción. Las paradas programadas suelen ser de pocas horas durante turnos de baja producción o fin de semana.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Cuánto tiempo tarda un proyecto de automatización industrial? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">Depende del alcance. Un sistema de monitoreo energético con dashboard puede instalarse en 2 a 4 semanas. Un proyecto SCADA completo para una planta mediana toma de 2 a 4 meses. Trabajamos con cronogramas detallados y entregables por fases para que siempre tengas visibilidad del avance.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Pueden integrar equipos que ya tenemos? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">Sí. Evaluamos el equipamiento existente y lo integramos al nuevo sistema siempre que sea técnicamente viable. Esto reduce significativamente la inversión. Trabajamos con los principales fabricantes (Siemens, Allen-Bradley, Schneider, Danfoss) y protocolos industriales estándar.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">¿Qué pasa si algo falla después de la implementación? <span class="faq-arrow">+</span></button>
+        <div class="faq-a">Ofrecemos contratos de soporte y mantenimiento post-implementación con tiempos de respuesta garantizados. Todos nuestros sistemas incluyen acceso remoto para diagnóstico, lo que permite resolver la mayoría de incidencias sin necesidad de visita presencial.</div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<footer>
+  <a href="https://www.dicisa.net" class="footer-logo">DI<span>C</span>ISA</a>
+  <div class="footer-links">
+    <a href="https://www.dicisa.net">Inicio</a>
+    <a href="https://www.dicisa.net/eficiencia-energetica-industrial/">Eficiencia Energética</a>
+    <a href="https://www.dicisa.net/refrigeracion-industrial-inteligente/">Refrigeración</a>
+    <a href="https://www.dicisa.net#contacto">Contacto</a>
+  </div>
+  <p class="footer-copy">© 2025 DICISA — Hermosillo, Sonora, México</p>
+</footer>
+ 
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+function handleSubmit(e) {
+  e.preventDefault();
+  const data = new FormData(e.target);
+  const msg = `Hola, me interesa automatización industrial.%0ANombre: ${data.get('nombre')}%0AEmpresa: ${data.get('empresa')}%0AProceso: ${data.get('proceso')}`;
+  window.open(`https://wa.me/525649470698?text=${msg}`, '_blank');
+}
+</script>
+</body>
+</html>
