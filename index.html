@@ -1054,56 +1054,56 @@
         </div>
       </div>
     </div>
-    <div class="contact-form reveal">
-      <div class="form-row">
-        <div class="form-group">
-          <label>Nombre</label>
-          <input type="text" placeholder="Razon social o nombre" />
-        </div>
-        <div class="form-group">
-          <label>Telefono</label>
-          <input type="tel" placeholder="+52 000 000 0000" />
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Correo Electronico</label>
-        <input type="email" placeholder="empresa@correo.com" />
-      </div>
-      <div class="form-group">
-        <label>Servicio de Interes</label>
-        <select>
-          <option value="">Seleccionar servicio...</option>
-          <optgroup label="— Construcción Inteligente —">
-            <option>⚡ Eficiencia Energética / Auditoría CFE</option>
-            <option>🔧 Automatización Industrial (PLC / SCADA)</option>
-            <option>❄️ Refrigeración Industrial Inteligente</option>
-            <option>📊 Monitoreo IoT / Dashboard operativo</option>
-          </optgroup>
-          <optgroup label="— Construcción e Ingeniería —">
-            <option>Obra Civil Industrial</option>
-            <option>Estructura Metalica</option>
-            <option>Instalaciones Electricas</option>
-            <option>Instalaciones de Gas</option>
-            <option>Drenaje y Agua Potable</option>
-            <option>Renta de Maquinaria</option>
-            <option>Venta Maquinaria Amarilla</option>
-            <option>Topografia y Fotogrametria</option>
-            <option>Diseno Arquitectonico</option>
-            <option>Construccion Habitacional</option>
-            <option>Remodelacion de Espacios</option>
-            <option>Revision Estructural</option>
-            <option>Proyecto Ejecutivo</option>
-            <option>Mantenimiento Industrial</option>
-          </optgroup>
-          <option>Otro</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Descripcion del Proyecto</label>
-        <textarea placeholder="Cuentanos brevemente sobre tu proyecto, ubicacion y alcance..."></textarea>
-      </div>
-      <button type="button" class="form-submit" id="btnSubmit">Enviar Solicitud &rarr;</button>
+    <form class="contact-form reveal" id="quickForm" novalidate>
+  <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+  <div class="form-row">
+    <div class="form-group">
+      <label for="qf-nombre">Nombre</label>
+      <input id="qf-nombre" name="nombre" type="text" placeholder="Razón social o nombre" required />
     </div>
+    <div class="form-group">
+      <label for="qf-tel">WhatsApp</label>
+      <input id="qf-tel" name="whatsapp" type="tel" placeholder="662 123 4567" required />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="qf-correo">Correo Electrónico</label>
+    <input id="qf-correo" name="correo" type="email" placeholder="empresa@correo.com" required />
+  </div>
+  <div class="form-group">
+    <label for="qf-serv">Servicio de Interés</label>
+    <select id="qf-serv" name="servicios" required>
+      <option value="">Seleccionar servicio...</option>
+      <optgroup label="— Construcción Inteligente —">
+        <option>Eficiencia Energética / Auditoría CFE</option>
+        <option>Automatización Industrial (PLC / SCADA)</option>
+        <option>Refrigeración Industrial Inteligente</option>
+        <option>Monitoreo IoT / Dashboard operativo</option>
+      </optgroup>
+      <optgroup label="— Construcción e Ingeniería —">
+        <option>Obra Civil Industrial</option><option>Estructura Metálica</option>
+        <option>Instalaciones Eléctricas</option><option>Instalaciones de Gas</option>
+        <option>Drenaje y Agua Potable</option><option>Renta de Maquinaria</option>
+        <option>Venta Maquinaria Amarilla</option><option>Topografía y Fotogrametría</option>
+        <option>Diseño Arquitectónico</option><option>Construcción Habitacional</option>
+        <option>Remodelación de Espacios</option><option>Revisión Estructural</option>
+        <option>Proyecto Ejecutivo</option><option>Mantenimiento Industrial</option>
+      </optgroup>
+      <option>Otro</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="qf-desc">Descripción del Proyecto</label>
+    <textarea id="qf-desc" name="descripcion" placeholder="Cuéntanos brevemente sobre tu proyecto, ubicación y alcance..." required></textarea>
+  </div>
+  <label style="display:flex;gap:.6rem;font-size:.8rem;color:var(--smoke);align-items:flex-start">
+    <input type="checkbox" name="aviso" required style="margin-top:.25rem">
+    <span>Acepto el <a href="/aviso-de-privacidad" style="color:var(--teal)">aviso de privacidad</a> y que DICISA me contacte sobre este proyecto.</span>
+  </label>
+  <button type="submit" class="form-submit" id="btnSubmit">Enviar Solicitud &rarr;</button>
+  <p id="qf-msg" style="font-size:.85rem;color:var(--smoke)"></p>
+  <p style="font-size:.8rem;color:var(--smoke)">¿Proyecto más grande? Usa el <a href="/cotizar.html" style="color:var(--teal)">formulario completo de cotización</a>.</p>
+</form>
   </div>
 </section>
 
@@ -1182,6 +1182,35 @@
       });
     }
   }
+   // Envío del formulario rápido a Google Sheets
+  var QF_URL = 'https://script.google.com/macros/s/AKfycbwhEY3ETXnkMN5R8tmWJ7ksZo2TZY21Q0SOjzKBbJpg6J_dz_Jg_knRkMWXOoCG-ISF/exec';
+  document.getElementById('quickForm').addEventListener('submit', function(ev) {
+    ev.preventDefault();
+    var f = ev.target, msg = document.getElementById('qf-msg'), btn = document.getElementById('btnSubmit');
+    var tel = f.whatsapp.value.replace(/\D/g,'').replace(/^52/,'');
+    if (!f.checkValidity() || tel.length !== 10) {
+      msg.style.color = '#ff7b72';
+      msg.textContent = 'Revisa los campos: nombre, WhatsApp de 10 dígitos, correo, servicio, descripción y aviso de privacidad.';
+      return;
+    }
+    if (f.website.value) return;
+    var data = {
+      nombre: f.nombre.value.trim(), whatsapp: tel, correo: f.correo.value.trim(),
+      servicios: f.servicios.value, descripcion: f.descripcion.value.trim(),
+      aviso: 'on', origen: 'Formulario rápido (inicio)', archivos: []
+    };
+    btn.disabled = true; btn.textContent = 'Enviando…';
+    fetch(QF_URL, { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(data) })
+      .then(function() {
+        f.reset(); msg.style.color = 'var(--teal)';
+        msg.textContent = 'Solicitud enviada. Te contactamos en un día hábil.';
+      })
+      .catch(function() {
+        msg.style.color = '#ff7b72';
+        msg.textContent = 'No se pudo enviar. Escríbenos por WhatsApp al 56 4947 0698.';
+      })
+      .finally(function() { btn.disabled = false; btn.innerHTML = 'Enviar Solicitud &rarr;'; });
+  });
 </script>
 </body>
 </html>
