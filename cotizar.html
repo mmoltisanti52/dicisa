@@ -1,80 +1,329 @@
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cotizar Proyecto | DICISA — Diseño Civil Sustentable</title>
-  <meta name="description" content="Solicita una cotización para tu proyecto de ingeniería civil industrial, automatización o eficiencia energética con DICISA en Sonora." />
-  <link rel="canonical" href="https://www.dicisa.net/cotizar.html" />
-  <meta property="og:title" content="Cotizar Proyecto | DICISA" />
-  <meta property="og:description" content="Solicita una cotización para tu proyecto con DICISA — Hermosillo y Guaymas, Sonora." />
-  <meta property="og:url" content="https://www.dicisa.net/cotizar.html" />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --teal: #1BB8C5; --teal-l: #5dd6e0;
-      --ink: #0d1117; --ink-2: #1a2230; --white: #ffffff; --smoke: #8fa0b0;
-      --radius: 4px;
-      --ff-head: 'Bebas Neue', sans-serif;
-      --ff-body: 'DM Sans', sans-serif;
-    }
-    body { font-family: var(--ff-body); background: var(--ink); color: var(--white); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cotizar Proyecto | DICISA — Diseño Civil Sustentable</title>
+<meta name="description" content="Solicita una cotización para tu proyecto de ingeniería civil industrial, automatización o eficiencia energética con DICISA en Sonora.">
+<link rel="canonical" href="https://www.dicisa.net/cotizar.html">
+<meta property="og:title" content="Cotizar Proyecto | DICISA">
+<meta property="og:description" content="Solicita una cotización para tu proyecto con DICISA — Hermosillo y Guaymas, Sonora.">
+<meta property="og:url" content="https://www.dicisa.net/cotizar.html">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+/* ====== CONFIGURA AQUÍ ====== */
+:root{
+  --paper:#0d1117; --panel:#1a2230; --ink:#ffffff; --steel:#1BB8C5;
+  --muted:#8fa0b0; --line:#2c3a4c; --signal:#1BB8C5; --error:#ff7b72;
+  color-scheme:dark; --field:#0f1520; --sel:#14303a;
+  --font:"DM Sans", Arial, sans-serif; --head:"Bebas Neue", "Arial Narrow", sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.5}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.25rem,5vw,4rem);height:64px;background:rgba(13,17,23,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(27,184,197,.15)}
+.nav-logo img{height:38px;width:auto;display:block;mix-blend-mode:screen}
+.nav-back{text-decoration:none;color:var(--muted);font-size:.8rem;font-weight:500;letter-spacing:1.5px;text-transform:uppercase}
+.nav-back:hover{color:var(--steel)}
+.wrap{max-width:680px;margin:0 auto;padding:32px 20px 56px}
+header h1{font-family:var(--head);font-weight:400;font-size:clamp(2.4rem,7vw,3.6rem);line-height:1;margin:0 0 10px;letter-spacing:1px}
+header h1 span{color:var(--steel)}
+header p{margin:0 0 28px;color:var(--muted);max-width:52ch}
 
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 clamp(1.5rem,5vw,4rem); height: 64px;
-      background: rgba(13,17,23,0.92); backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(27,184,197,0.15);
-    }
-    .nav-logo img { height: 38px; width: auto; display: block; mix-blend-mode: screen; }
-    .nav-back { text-decoration: none; color: var(--smoke); font-size: 0.8rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; transition: color 0.2s; }
-    .nav-back:hover { color: var(--teal); }
+/* Barra de avance: tramos medidos */
+.gauge{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:8px}
+.gauge span{height:8px;background:var(--line);transition:background .25s}
+.gauge span.on{background:var(--signal)}
+.gauge-label{display:flex;justify-content:space-between;font-size:.82rem;color:var(--muted);margin-bottom:22px}
+.gauge-label b{color:var(--ink);font-weight:600}
 
-    header { padding: 2.5rem clamp(1.5rem,5vw,4rem) 1.5rem; max-width: 1100px; width: 100%; margin: 0 auto; }
-    header h1 { font-family: var(--ff-head); font-size: clamp(2.4rem,6vw,3.6rem); letter-spacing: 1px; line-height: 1; }
-    header h1 span { color: var(--teal); }
-    header p { color: var(--smoke); margin-top: 0.6rem; max-width: 640px; }
+form{background:var(--panel);border:1px solid var(--line);padding:26px 22px}
+fieldset{border:0;margin:0;padding:0;display:none}
+fieldset.active{display:block}
+legend{font-family:var(--head);font-weight:400;letter-spacing:.5px;font-size:1.7rem;margin-bottom:18px;color:var(--steel)}
+.field{margin-bottom:18px}
+label.lbl{display:block;font-weight:600;margin-bottom:6px}
+.hint{font-weight:400;color:var(--muted);font-size:.88rem}
+input[type=text],input[type=email],input[type=tel],select,textarea{
+  width:100%;font:inherit;color:var(--ink);background:var(--field);border:1px solid var(--line);
+  padding:11px 12px;border-radius:3px}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus,.opt input:focus-visible+span,button:focus-visible{outline:3px solid var(--signal);outline-offset:1px}
+.row{display:grid;gap:0 14px}
+@media(min-width:560px){.row{grid-template-columns:1fr 1fr}}
 
-    main { flex: 1; padding: 0 clamp(1rem,4vw,4rem) 2.5rem; max-width: 1100px; width: 100%; margin: 0 auto; }
-    .frame-wrap { background: var(--white); border: 1px solid rgba(27,184,197,0.25); border-radius: var(--radius); overflow: hidden; }
-    .frame-wrap iframe { display: block; width: 100%; height: 80vh; min-height: 640px; border: 0; }
-    .fallback { margin-top: 1rem; font-size: 0.85rem; color: var(--smoke); }
-    .fallback a { color: var(--teal); }
+.opts{display:grid;gap:8px}
+@media(min-width:560px){.opts.two{grid-template-columns:1fr 1fr}}
+.opt{position:relative;display:block;cursor:pointer}
+.opt input{position:absolute;opacity:0}
+.opt span{display:block;border:1px solid var(--line);padding:10px 12px;border-radius:3px;background:var(--field)}
+.opt input:checked+span{border-color:var(--steel);box-shadow:inset 4px 0 0 var(--steel);background:var(--sel);font-weight:600}
 
-    footer { text-align: center; padding: 1.5rem; font-size: 0.75rem; color: var(--smoke); border-top: 1px solid rgba(27,184,197,0.1); }
-  </style>
+.err{color:var(--error);font-size:.88rem;margin-top:4px;display:none}
+.invalid .err{display:block}
+.invalid input,.invalid select,.invalid textarea,.invalid .opt span{border-color:var(--error)}
+
+.nav{display:flex;gap:10px;justify-content:space-between;margin-top:26px}
+button{font:inherit;font-weight:700;border:0;border-radius:3px;padding:13px 22px;cursor:pointer}
+.primary{background:var(--steel);color:#0d1117;margin-left:auto}
+.primary:disabled{opacity:.6;cursor:wait}
+.ghost{background:transparent;color:var(--steel);border:1px solid var(--line)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;color:var(--muted)}
+.consent input{margin-top:4px;width:18px;height:18px}
+.consent a{color:var(--steel)}
+.hp{position:absolute;left:-9999px}
+.files-list{font-size:.85rem;color:var(--muted);margin-top:6px}
+
+.done{display:none;text-align:left}
+.done h2{font-family:var(--head);font-weight:400;font-size:2rem;color:var(--steel);margin:0 0 8px}
+.done{background:var(--panel);border:1px solid var(--line);padding:26px 22px}
+.done.show{display:block}
+footer{margin-top:18px;font-size:.82rem;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
 </head>
 <body>
-
 <nav>
-  <a href="/" class="nav-logo">
-    <img src="/Logo DICISA.jpg" alt="DICISA — Diseño Civil Sustentable" height="38" />
-  </a>
+  <a href="/" class="nav-logo"><img src="/Logo%20DICISA.jpg" alt="DICISA — Diseño Civil Sustentable" height="38"></a>
   <a href="/" class="nav-back">&larr; Inicio</a>
 </nav>
+<div class="wrap">
+  <header>
+    <h1>Cotiza tu <span>proyecto</span></h1>
+    <p>Ingeniería y construcción industrial en Sonora, Sinaloa y Baja California, con registro REPSE AR33832/2026. Toma unos 3 minutos y te contactamos en un día hábil.</p>
+  </header>
 
-<header>
-  <h1>Cotiza tu <span>proyecto</span></h1>
-  <p>Completa el formulario con los detalles de tu proyecto y nuestro equipo te responderá a la brevedad.</p>
-</header>
+  <div class="gauge" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span></div>
+  <div class="gauge-label"><span>Paso <b id="stepNum">1</b> de 4</span><span id="stepName">Contacto</span></div>
 
-<main>
-  <div class="frame-wrap">
-    <iframe
-      src="https://script.google.com/macros/s/AKfycbwhEY3ETXnkMN5R8tmWJ7ksZo2TZY21Q0SOjzKBbJpg6J_dz_Jg_knRkMWXOoCG-ISF/exec"
-      title="Formulario de cotización DICISA"
-      loading="lazy"
-      allow="clipboard-write"></iframe>
+  <form id="lead" novalidate>
+    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <!-- PASO 1 -->
+    <fieldset class="active" data-name="Contacto">
+      <legend>¿Con quién hablamos?</legend>
+      <div class="row">
+        <div class="field"><label class="lbl" for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+          <div class="err">Escribe tu nombre.</div></div>
+        <div class="field"><label class="lbl" for="empresa">Empresa <span class="hint">(opcional)</span></label>
+          <input id="empresa" name="empresa" type="text" autocomplete="organization"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label class="lbl" for="whatsapp">WhatsApp</label>
+          <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="662 123 4567" required data-rule="phone">
+          <div class="err">Escribe un número de 10 dígitos.</div></div>
+        <div class="field"><label class="lbl" for="correo">Correo</label>
+          <input id="correo" name="correo" type="email" autocomplete="email" required>
+          <div class="err">Escribe un correo válido.</div></div>
+      </div>
+      <div class="row">
+        <div class="field"><label class="lbl" for="puesto">Puesto <span class="hint">(opcional)</span></label>
+          <input id="puesto" name="puesto" type="text" autocomplete="organization-title"></div>
+        <div class="field"><label class="lbl" for="ciudad">Ciudad del proyecto</label>
+          <input id="ciudad" name="ciudad" type="text" list="ciudades" required>
+          <datalist id="ciudades"><option>Hermosillo</option><option>Guaymas</option><option>Empalme</option><option>San Carlos</option><option>Ciudad Obregón</option><option>Navojoa</option><option>Culiacán</option><option>Los Mochis</option><option>Mexicali</option></datalist>
+          <div class="err">Indica dónde será el proyecto.</div></div>
+      </div>
+      <div class="field"><label class="lbl">¿Cuál es tu papel en la decisión?</label>
+        <div class="opts" data-group="rol" data-required>
+          <label class="opt"><input type="radio" name="rol" value="decido"><span>Yo decido o autorizo</span></label>
+          <label class="opt"><input type="radio" name="rol" value="participo"><span>Participo en la decisión</span></label>
+          <label class="opt"><input type="radio" name="rol" value="info"><span>Estoy reuniendo información</span></label>
+        </div><div class="err">Elige una opción.</div></div>
+    </fieldset>
+
+    <!-- PASO 2 -->
+    <fieldset data-name="Proyecto">
+      <legend>¿Qué necesitas?</legend>
+      <div class="field"><label class="lbl">Servicios <span class="hint">(elige todos los que apliquen)</span></label>
+        <div class="opts two" data-group="servicios" data-required>
+          <label class="opt"><input type="checkbox" name="servicios" value="Estructuras metálicas y obra civil"><span>Estructuras metálicas y obra civil</span></label>
+          <label class="opt"><input type="checkbox" name="servicios" value="Naves y obra industrial"><span>Naves y obra industrial</span></label>
+          <label class="opt"><input type="checkbox" name="servicios" value="HVAC y refrigeración"><span>HVAC y refrigeración</span></label>
+          <label class="opt"><input type="checkbox" name="servicios" value="Instalaciones eléctricas"><span>Instalaciones eléctricas</span></label>
+          <label class="opt"><input type="checkbox" name="servicios" value="Protección contra incendio"><span>Protección contra incendio</span></label>
+          <label class="opt"><input type="checkbox" name="servicios" value="Energía solar"><span>Energía solar</span></label>
+          <label class="opt"><input type="checkbox" name="servicios" value="Eficiencia energética"><span>Eficiencia energética</span></label>
+          <label class="opt"><input type="checkbox" name="servicios" value="Automatización"><span>Automatización</span></label>
+          <label class="opt"><input type="checkbox" name="servicios" value="Topografía"><span>Topografía</span></label>
+          <label class="opt"><input type="checkbox" name="servicios" value="Ingeniería / BIM / proyecto ejecutivo"><span>Ingeniería, BIM o proyecto ejecutivo</span></label>
+          <label class="opt"><input type="checkbox" name="servicios" value="Mantenimiento"><span>Mantenimiento</span></label>
+          <label class="opt"><input type="checkbox" name="servicios" value="Otro"><span>Otro</span></label>
+        </div><div class="err">Elige al menos un servicio.</div></div>
+      <div class="field"><label class="lbl">Tipo de trabajo</label>
+        <div class="opts two" data-group="tipo" data-required>
+          <label class="opt"><input type="radio" name="tipo" value="Obra nueva"><span>Obra nueva</span></label>
+          <label class="opt"><input type="radio" name="tipo" value="Ampliación / remodelación"><span>Ampliación o remodelación</span></label>
+          <label class="opt"><input type="radio" name="tipo" value="Mantenimiento"><span>Mantenimiento</span></label>
+          <label class="opt"><input type="radio" name="tipo" value="Solo ingeniería"><span>Solo ingeniería o proyecto</span></label>
+        </div><div class="err">Elige una opción.</div></div>
+      <div class="field"><label class="lbl" for="sector">Sector</label>
+        <select id="sector" name="sector" required>
+          <option value="">Selecciona…</option><option>Industrial / manufactura</option><option>Alimentos y agroindustria</option>
+          <option>Comercial</option><option>Hotelería</option><option>Salud</option><option>Residencial</option><option>Gobierno</option><option>Otro</option>
+        </select><div class="err">Elige un sector.</div></div>
+    </fieldset>
+
+    <!-- PASO 3 -->
+    <fieldset data-name="Alcance y tiempos">
+      <legend>Alcance y tiempos</legend>
+      <div class="field"><label class="lbl">¿En qué punto estás?</label>
+        <div class="opts" data-group="etapa" data-required>
+          <label class="opt"><input type="radio" name="etapa" value="investigando"><span>Solo estoy investigando</span></label>
+          <label class="opt"><input type="radio" name="etapa" value="preparacion"><span>Tengo un proyecto en preparación</span></label>
+          <label class="opt"><input type="radio" name="etapa" value="cotizacion"><span>Necesito cotización</span></label>
+          <label class="opt"><input type="radio" name="etapa" value="iniciar"><span>Necesito iniciar pronto</span></label>
+        </div><div class="err">Elige una opción.</div></div>
+      <div class="row">
+        <div class="field"><label class="lbl" for="inicio">¿Cuándo quieres iniciar?</label>
+          <select id="inicio" name="inicio" required>
+            <option value="">Selecciona…</option><option value="inmediato">En menos de 30 días</option>
+            <option value="1-3m">En 1 a 3 meses</option><option value="3-6m">En 3 a 6 meses</option><option value="+6m">Más de 6 meses / sin fecha</option>
+          </select><div class="err">Elige una fecha aproximada.</div></div>
+        <div class="field"><label class="lbl" for="presupuesto">Presupuesto estimado</label>
+          <select id="presupuesto" name="presupuesto" required>
+            <option value="">Selecciona…</option><option value="<250k">Menos de $250 mil</option>
+            <option value="250k-1M">$250 mil a $1 millón</option><option value="1M-5M">$1 a $5 millones</option>
+            <option value=">5M">Más de $5 millones</option><option value="nose">Aún no lo sé</option>
+          </select><div class="err">Elige un rango.</div></div>
+      </div>
+      <div class="field"><label class="lbl">¿Cuentas con planos o proyecto?</label>
+        <div class="opts" data-group="planos" data-required>
+          <label class="opt"><input type="radio" name="planos" value="si"><span>Sí, proyecto ejecutivo o planos</span></label>
+          <label class="opt"><input type="radio" name="planos" value="croquis"><span>Tengo croquis, fotos o ideas</span></label>
+          <label class="opt"><input type="radio" name="planos" value="no"><span>No, necesito que lo desarrollen</span></label>
+        </div><div class="err">Elige una opción.</div></div>
+      <div class="row">
+        <div class="field"><label class="lbl" for="superficie">Superficie aprox. <span class="hint">(m², opcional)</span></label>
+          <input id="superficie" name="superficie" type="text" inputmode="numeric"></div>
+        <div class="field"><label class="lbl" for="otras">¿Tienes otras cotizaciones?</label>
+          <select id="otras" name="otras"><option value="">Prefiero no decir</option><option>Sí</option><option>No</option></select></div>
+      </div>
+    </fieldset>
+
+    <!-- PASO 4 -->
+    <fieldset data-name="Detalles">
+      <legend>Detalles del proyecto</legend>
+      <div class="field"><label class="lbl" for="descripcion">Describe lo que necesitas</label>
+        <textarea id="descripcion" name="descripcion" required placeholder="Ej. Nave de 800 m² con estructura metálica y sistema contra incendio en parque industrial."></textarea>
+        <div class="err">Cuéntanos brevemente el proyecto.</div></div>
+      <div class="field"><label class="lbl" for="archivos">Adjuntar archivos <span class="hint">(planos, fotos, catálogo; máx. 10 MB en total)</span></label>
+        <input id="archivos" name="archivos" type="file" multiple accept=".pdf,.jpg,.jpeg,.png,.dwg,.xlsx,.xls,.docx">
+        <div class="files-list" id="filesList"></div>
+        <div class="err" id="filesErr">Los archivos superan 10 MB. Envía menos o más ligeros.</div></div>
+      <div class="field"><label class="consent"><input type="checkbox" id="aviso" name="aviso" required>
+        <span>Acepto el <a href="https://dicisa.net/aviso-de-privacidad" target="_blank" rel="noopener">aviso de privacidad</a> y que DICISA me contacte por WhatsApp o correo sobre este proyecto.</span></label>
+        <div class="err">Acepta el aviso de privacidad para enviar.</div></div>
+    </fieldset>
+
+    <div class="nav">
+      <button type="button" class="ghost" id="back" hidden>Atrás</button>
+      <button type="button" class="primary" id="next">Continuar</button>
+    </div>
+  </form>
+
+  <div class="done" id="done" role="status">
+    <h2>Solicitud enviada</h2>
+    <p>Gracias. Revisaremos tu proyecto y te contactaremos por WhatsApp o correo en un día hábil.</p>
   </div>
-  <p class="fallback">¿No se muestra el formulario? <a href="https://script.google.com/macros/s/AKfycbwhEY3ETXnkMN5R8tmWJ7ksZo2TZY21Q0SOjzKBbJpg6J_dz_Jg_knRkMWXOoCG-ISF/exec" target="_blank" rel="noopener">Ábrelo en una nueva pestaña</a> o escríbenos por <a href="https://wa.me/525649470698?text=Hola%2C%20me%20interesa%20cotizar%20un%20proyecto%20con%20DICISA" target="_blank" rel="noopener">WhatsApp</a>.</p>
-</main>
+  <footer>¿Prefieres hablar directo? Escríbenos por <a style="color:var(--steel)" href="https://wa.me/525649470698?text=Hola%2C%20me%20interesa%20cotizar%20un%20proyecto%20con%20DICISA" target="_blank" rel="noopener">WhatsApp</a>.<br>&copy; DICISA — Diseño Civil Sustentable · Hermosillo y Guaymas, Sonora</footer>
+</div>
 
-<footer>&copy; DICISA — Diseño Civil Sustentable · Hermosillo y Guaymas, Sonora</footer>
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwhEY3ETXnkMN5R8tmWJ7ksZo2TZY21Q0SOjzKBbJpg6J_dz_Jg_knRkMWXOoCG-ISF/exec"; // termina en /exec
+const MAX_BYTES = 10 * 1024 * 1024;
 
+const form = document.getElementById('lead');
+const steps = [...form.querySelectorAll('fieldset')];
+const gauge = [...document.querySelectorAll('.gauge span')];
+const nextBtn = document.getElementById('next'), backBtn = document.getElementById('back');
+let cur = 0;
+
+function show(i){
+  steps.forEach((s,k)=>s.classList.toggle('active',k===i));
+  gauge.forEach((g,k)=>g.classList.toggle('on',k<=i));
+  document.getElementById('stepNum').textContent = i+1;
+  document.getElementById('stepName').textContent = steps[i].dataset.name;
+  backBtn.hidden = i===0;
+  nextBtn.textContent = i===steps.length-1 ? 'Enviar solicitud' : 'Continuar';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function validStep(i){
+  let ok = true;
+  steps[i].querySelectorAll('.field').forEach(f=>{
+    f.classList.remove('invalid');
+    const grp = f.querySelector('[data-group][data-required]');
+    const el = f.querySelector('input[required],select[required],textarea[required]');
+    let bad = false;
+    if(grp) bad = !grp.querySelector('input:checked');
+    else if(el){
+      const v = el.type==='checkbox' ? el.checked : el.value.trim();
+      if(!v) bad = true;
+      else if(el.type==='email') bad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      else if(el.dataset.rule==='phone') bad = v.replace(/\D/g,'').replace(/^52/,'').length!==10;
+    }
+    if(f.contains(document.getElementById('archivos')) && totalBytes()>MAX_BYTES) bad = true;
+    if(bad){ f.classList.add('invalid'); ok = false; }
+  });
+  if(!ok) steps[i].querySelector('.invalid input, .invalid select, .invalid textarea')?.focus();
+  return ok;
+}
+
+function totalBytes(){ return [...document.getElementById('archivos').files].reduce((a,f)=>a+f.size,0); }
+document.getElementById('archivos').addEventListener('change',e=>{
+  const fs=[...e.target.files];
+  document.getElementById('filesList').textContent = fs.length ? fs.map(f=>f.name).join(', ')+` (${(totalBytes()/1048576).toFixed(1)} MB)` : '';
+});
+
+// Calificación (se recalcula en el servidor; aquí solo como respaldo)
+const PTS = {
+  etapa:{investigando:0,preparacion:1,cotizacion:2,iniciar:3},
+  inicio:{'inmediato':3,'1-3m':2,'3-6m':1,'+6m':0},
+  presupuesto:{'<250k':1,'250k-1M':2,'1M-5M':3,'>5M':3,'nose':0},
+  planos:{si:2,croquis:1,no:0},
+  rol:{decido:2,participo:1,info:0}
+};
+
+const toB64 = f => new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result.split(',')[1]);r.onerror=rej;r.readAsDataURL(f);});
+
+async function submit(){
+  const fd = new FormData(form);
+  if(fd.get('website')) return; // bot
+  const data = {};
+  for(const [k,v] of fd.entries()){
+    if(k==='archivos'||k==='website') continue;
+    data[k] = data[k] ? data[k]+', '+v : v;
+  }
+  const p = new URLSearchParams(location.search);
+  data.origen = p.get('utm_source') || document.referrer || 'directo';
+  data.campana = p.get('utm_campaign') || '';
+  data.archivos = await Promise.all([...document.getElementById('archivos').files].map(async f=>({name:f.name,type:f.type||'application/octet-stream',data:await toB64(f)})));
+
+  nextBtn.disabled = true; nextBtn.textContent = 'Enviando…';
+  try{
+    await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});
+    form.style.display='none';
+    document.querySelector('.gauge').style.display='none';
+    document.querySelector('.gauge-label').style.display='none';
+    document.getElementById('done').classList.add('show');
+  }catch(err){
+    nextBtn.disabled=false; nextBtn.textContent='Enviar solicitud';
+    alert('No se pudo enviar. Revisa tu conexión o escríbenos por WhatsApp al 56 4947 0698.');
+  }
+}
+
+nextBtn.addEventListener('click',()=>{
+  if(!validStep(cur)) return;
+  if(cur<steps.length-1){ cur++; show(cur); } else submit();
+});
+backBtn.addEventListener('click',()=>{ cur--; show(cur); });
+</script>
 </body>
+</html>
 </html>
