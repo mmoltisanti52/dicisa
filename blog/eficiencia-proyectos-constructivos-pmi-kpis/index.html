@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eficiencia en proyectos de construcción: PMBOK 8, valor ganado y KPIs | DICISA</title>
+  <meta name="description" content="Cómo se administra un proyecto constructivo según el PMBOK 8 del PMI y cómo se calculan CPI, SPI, EAC y TCPI, con un ejemplo de nave industrial en Sonora." />
+  <link rel="canonical" href="https://www.dicisa.net/blog/eficiencia-proyectos-constructivos-pmi-kpis/" />
+  <meta property="og:title" content="Eficiencia en proyectos de construcción: PMBOK 8, valor ganado y KPIs" />
+  <meta property="og:description" content="Dominios de desempeño del PMBOK 8, fórmulas de valor ganado y los KPIs que usa un proyecto constructivo eficiente. Con ejemplo numérico." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.dicisa.net/blog/eficiencia-proyectos-constructivos-pmi-kpis/" />
+  <meta property="og:image" content="https://www.dicisa.net/NAves%20industriales.png" />
+  <meta property="og:site_name" content="DICISA — Diseño Civil Sustentable" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Eficiencia en proyectos de construcción: PMBOK 8, valor ganado y KPIs",
+    "description": "Cómo se administra un proyecto constructivo según el PMBOK 8 del PMI y cómo se calculan CPI, SPI, EAC y TCPI, con un ejemplo de nave industrial en Sonora.",
+    "image": "https://www.dicisa.net/NAves%20industriales.png",
+    "datePublished": "2026-11-21",
+    "dateModified": "2026-11-21",
+    "inLanguage": "es-MX",
+    "mainEntityOfPage": "https://www.dicisa.net/blog/eficiencia-proyectos-constructivos-pmi-kpis/",
+    "author": { "@type": "Organization", "name": "DICISA — Diseño Civil Sustentable", "url": "https://www.dicisa.net/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DICISA — Diseño Civil Sustentable",
+      "logo": { "@type": "ImageObject", "url": "https://www.dicisa.net/logo%20DICISA.jpg" }
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal: #1BB8C5; --teal-l: #5dd6e0;
+      --ink: #0d1117; --ink-2: #1a2230; --white: #ffffff; --smoke: #8fa0b0;
+      --line: rgba(27,184,197,0.18);
+      --ff-head: 'Bebas Neue', sans-serif; --ff-body: 'DM Sans', sans-serif; --ff-mono: 'DM Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--ink); color: #d6dee6; font-family: var(--ff-body); font-size: 17px; line-height: 1.75; }
+    a { color: var(--teal); }
+    nav { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+          padding: 0 clamp(1rem,5vw,4rem); height: 64px; background: rgba(13,17,23,0.94); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+    nav img { height: 38px; width: auto; display: block; mix-blend-mode: screen; }
+    nav ul { display: flex; gap: 1.5rem; list-style: none; }
+    nav ul a { color: var(--smoke); text-decoration: none; font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
+    nav ul a:hover { color: var(--teal); }
+    .cta-nav { background: var(--teal); color: var(--ink) !important; padding: 0.4rem 1rem; border-radius: 4px; font-weight: 600 !important; }
+    @media (max-width: 720px) { nav ul li:not(:last-child) { display: none; } }
+
+    header.post-head { max-width: 820px; margin: 0 auto; padding: 4rem 1rem 2rem; }
+    .crumbs { font-family: var(--ff-mono); font-size: 0.75rem; color: var(--smoke); letter-spacing: 1px; margin-bottom: 1.5rem; }
+    .crumbs a { color: var(--smoke); text-decoration: none; }
+    h1 { font-family: var(--ff-head); font-weight: 400; color: var(--white); font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.02; letter-spacing: 0.5px; }
+    h1 .accent { color: var(--teal); }
+    .lede { margin-top: 1.25rem; font-size: 1.15rem; color: var(--smoke); font-weight: 300; }
+    .meta { margin-top: 1.25rem; font-family: var(--ff-mono); font-size: 0.75rem; color: var(--smoke); letter-spacing: 1px; text-transform: uppercase; }
+
+    main { max-width: 820px; margin: 0 auto; padding: 0 1rem 4rem; }
+    .toc { border: 1px solid var(--line); background: var(--ink-2); border-radius: 4px; padding: 1.25rem 1.5rem; margin: 1rem 0 2.5rem; }
+    .toc strong { font-family: var(--ff-mono); font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal); }
+    .toc ol { margin: 0.6rem 0 0 1.2rem; }
+    .toc a { color: #d6dee6; text-decoration: none; }
+    .toc a:hover { color: var(--teal); }
+    h2 { font-family: var(--ff-head); font-weight: 400; color: var(--white); font-size: clamp(1.8rem, 4vw, 2.4rem); letter-spacing: 0.5px; margin: 3rem 0 1rem; scroll-margin-top: 80px; }
+    h3 { color: var(--white); font-size: 1.15rem; margin: 2rem 0 0.6rem; }
+    p { margin: 0 0 1.1rem; }
+    ul.plain, ol.plain { margin: 0 0 1.2rem 1.3rem; }
+    li { margin-bottom: 0.4rem; }
+    strong { color: var(--white); }
+    .table-wrap { overflow-x: auto; margin: 1.25rem 0 1.75rem; border: 1px solid var(--line); border-radius: 4px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.93rem; min-width: 560px; }
+    th, td { text-align: left; padding: 0.7rem 0.9rem; border-bottom: 1px solid rgba(143,160,176,0.15); vertical-align: top; }
+    th { background: var(--ink-2); color: var(--teal); font-family: var(--ff-mono); font-weight: 500; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; }
+    td code, p code { font-family: var(--ff-mono); font-size: 0.88rem; color: var(--teal-l); }
+    tr:last-child td { border-bottom: none; }
+    .num { font-family: var(--ff-mono); white-space: nowrap; }
+    .bad { color: #ff8a65; } .good { color: #6fd39b; }
+    .callout { border-left: 3px solid var(--teal); background: var(--ink-2); padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
+    .callout p:last-child { margin-bottom: 0; }
+    .domains { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin: 1.25rem 0 1.75rem; }
+    .domain { border: 1px solid var(--line); border-radius: 4px; padding: 1rem 1.1rem; background: var(--ink-2); }
+    .domain b { display: block; font-family: var(--ff-head); font-weight: 400; font-size: 1.35rem; color: var(--white); letter-spacing: 0.5px; }
+    .domain span { display: block; font-size: 0.9rem; color: var(--smoke); line-height: 1.55; margin-top: 0.3rem; }
+    .domain em { display: block; font-style: normal; font-family: var(--ff-mono); font-size: 0.75rem; color: var(--teal); margin-top: 0.6rem; }
+    .cta-box { margin-top: 3rem; border: 1px solid var(--teal); border-radius: 4px; padding: 2rem 1.5rem; text-align: center; background: linear-gradient(180deg, rgba(27,184,197,0.08), transparent); }
+    .cta-box h2 { margin-top: 0; }
+    .btn { display: inline-block; margin-top: 0.75rem; background: var(--teal); color: var(--ink); text-decoration: none; font-weight: 600; padding: 0.8rem 1.5rem; border-radius: 4px; }
+    .btn:hover { background: var(--teal-l); }
+    .refs { font-size: 0.9rem; color: var(--smoke); }
+    footer { border-top: 1px solid var(--line); padding: 2rem clamp(1rem,5vw,4rem); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: 0.85rem; color: var(--smoke); }
+    footer .links { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+    footer a { color: var(--smoke); text-decoration: none; }
+    footer a:hover { color: var(--teal); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/"><img src="/logo%20DICISA.jpg" alt="DICISA — Diseño Civil Sustentable" height="38" /></a>
+  <ul>
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/#servicios">Servicios</a></li>
+    <li><a href="/#proyectos">Proyectos</a></li>
+    <li><a href="/#contacto" class="cta-nav">Cotizar</a></li>
+  </ul>
+</nav>
+
+<header class="post-head">
+  <div class="crumbs"><a href="/">Inicio</a> / <a href="/blog/eficiencia-proyectos-constructivos-pmi-kpis/">Blog</a> / Gestión de proyectos</div>
+  <h1>Eficiencia en proyectos de construcción: <span class="accent">PMBOK 8, valor ganado y KPIs</span></h1>
+  <p class="lede">Cómo se administra hoy un proyecto constructivo según el PMI, cómo se calculan los indicadores de costo y plazo, y qué métricas distinguen a una obra eficiente de una que solo “va avanzando”.</p>
+  <div class="meta">DICISA · Ingeniería y construcción industrial · Sonora · Noviembre 2026</div>
+</header>
+
+<main>
+  <div class="toc">
+    <strong>Contenido</strong>
+    <ol>
+      <li><a href="#que-es">Qué significa “eficiente” en un proyecto constructivo</a></li>
+      <li><a href="#pmbok8">Qué cambió con el PMBOK 8</a></li>
+      <li><a href="#dominios">Los 7 dominios de desempeño aplicados a obra</a></li>
+      <li><a href="#evm">Valor ganado: las fórmulas clave</a></li>
+      <li><a href="#ejemplo">Ejemplo: nave industrial de $12 millones</a></li>
+      <li><a href="#kpis">KPIs operativos de obra</a></li>
+      <li><a href="#tablero">Cómo armar el tablero de control</a></li>
+      <li><a href="#errores">Errores comunes</a></li>
+    </ol>
+  </div>
+
+  <h2 id="que-es">1. Qué significa “eficiente” en un proyecto constructivo</h2>
+  <p>Un proyecto eficiente no es solo el que termina. Es el que entrega el alcance acordado, con la calidad especificada, dentro del presupuesto y del plazo, y sin accidentes. Además, deja información suficiente para saber <em>en cada momento</em> si va bien o mal.</p>
+  <p>Esa última parte es la que suele faltar. Muchas obras reportan “porcentaje de avance” estimado a ojo, sin relacionarlo con lo gastado ni con lo programado. Así, un proyecto puede verse al 60% cuando en realidad ya consumió el 75% del presupuesto. La gestión de proyectos según el PMI resuelve esto con dos herramientas: una estructura de gestión clara y un método de medición objetivo, el <strong>valor ganado</strong>.</p>
+
+  <h2 id="pmbok8">2. Qué cambió con el PMBOK 8</h2>
+  <p>La edición vigente de la guía del PMI es el <strong>PMBOK® Guide – Octava Edición</strong>, publicada en noviembre de 2025. Mantiene la base de principios y dominios de desempeño de la séptima edición, pero la simplifica y la hace más aplicable. También vuelve a incluir guía de procesos, presentada de forma no prescriptiva, y amplía la cobertura de inteligencia artificial, PMO y adquisiciones.</p>
+  <p>En la práctica, la octava edición se organiza en:</p>
+  <ul class="plain">
+    <li><strong>6 principios</strong>: visión holística, enfoque en el valor, calidad integrada, liderazgo con rendición de cuentas, sostenibilidad integrada y equipos empoderados.</li>
+    <li><strong>7 dominios de desempeño</strong>: gobernanza, alcance, cronograma, finanzas, interesados, recursos y riesgo.</li>
+    <li><strong>Áreas de enfoque</strong>: la guía de procesos que regresa, para dar estructura a la ejecución sin volver a la rigidez de ediciones anteriores.</li>
+  </ul>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Aspecto</th><th>PMBOK 7 (2021)</th><th>PMBOK 8 (2025)</th></tr></thead>
+      <tbody>
+        <tr><td>Principios</td><td>12</td><td>6, más concretos</td></tr>
+        <tr><td>Dominios de desempeño</td><td>8 (interesados, equipo, enfoque y ciclo de vida, planificación, trabajo, entrega, medición, incertidumbre)</td><td>7 (gobernanza, alcance, cronograma, finanzas, interesados, recursos, riesgo)</td></tr>
+        <tr><td>Procesos</td><td>Retirados como eje de la guía</td><td>Reintroducidos como guía no prescriptiva</td></tr>
+        <tr><td>Temas nuevos o ampliados</td><td>—</td><td>IA, PMO, adquisiciones, sostenibilidad</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout"><p><strong>Para obra, esto es una buena noticia.</strong> Los dominios del PMBOK 8 (alcance, cronograma, finanzas, recursos y riesgo) se parecen mucho a cómo ya se controla una obra en campo. Eso facilita conectar la teoría con el catálogo de conceptos, el programa de obra y las estimaciones.</p></div>
+
+  <h2 id="dominios">3. Los 7 dominios de desempeño aplicados a obra</h2>
+  <div class="domains">
+    <div class="domain"><b>Gobernanza</b><span>Quién decide, cómo se aprueban cambios y cómo se alinea la obra con los objetivos del cliente.</span><em>Métrica: tiempo de respuesta a órdenes de cambio</em></div>
+    <div class="domain"><b>Alcance</b><span>Catálogo de conceptos, planos ejecutivos, especificaciones y EDT. Lo que se construye y lo que no.</span><em>Métrica: número y monto de cambios de alcance</em></div>
+    <div class="domain"><b>Cronograma</b><span>Programa de obra, ruta crítica, holguras y frentes de trabajo.</span><em>Métrica: SPI, % de actividades críticas a tiempo</em></div>
+    <div class="domain"><b>Finanzas</b><span>Presupuesto, estimaciones, flujo de efectivo, anticipos y retenciones.</span><em>Métrica: CPI, EAC, desviación de flujo</em></div>
+    <div class="domain"><b>Interesados</b><span>Cliente, supervisión, autoridades, vecinos y subcontratistas. Incluye la comunicación.</span><em>Métrica: observaciones abiertas de supervisión</em></div>
+    <div class="domain"><b>Recursos</b><span>Personal, maquinaria, materiales y subcontratos. Incluye las adquisiciones.</span><em>Métrica: productividad, rendimiento de cuadrillas</em></div>
+    <div class="domain"><b>Riesgo</b><span>Clima, suministro, suelos, permisos, seguridad. Amenazas y oportunidades.</span><em>Métrica: riesgos activos con plan de respuesta</em></div>
+  </div>
+
+  <h2 id="evm">4. Valor ganado: las fórmulas clave</h2>
+  <p>El método de valor ganado (EVM) compara tres cantidades en la misma fecha de corte:</p>
+  <ul class="plain">
+    <li><strong>PV – Valor planificado:</strong> lo que el programa decía que debía estar hecho, valuado a presupuesto.</li>
+    <li><strong>EV – Valor ganado:</strong> lo que realmente está hecho, valuado a presupuesto. En obra se obtiene de los volúmenes ejecutados por concepto multiplicados por su precio unitario de presupuesto.</li>
+    <li><strong>AC – Costo real:</strong> lo que realmente se ha gastado para lograr ese avance.</li>
+  </ul>
+  <p>Con ellos, y con el presupuesto total (<strong>BAC</strong>), se calculan los indicadores:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Indicador</th><th>Fórmula</th><th>Cómo se lee</th></tr></thead>
+      <tbody>
+        <tr><td>Variación de costo (CV)</td><td><code>EV − AC</code></td><td>Negativo = gastando más de lo que vale lo hecho</td></tr>
+        <tr><td>Variación de cronograma (SV)</td><td><code>EV − PV</code></td><td>Negativo = atrasado respecto al programa</td></tr>
+        <tr><td>Índice de desempeño de costo (CPI)</td><td><code>EV / AC</code></td><td>&lt; 1 sobrecosto · = 1 en presupuesto · &gt; 1 ahorro</td></tr>
+        <tr><td>Índice de desempeño de cronograma (SPI)</td><td><code>EV / PV</code></td><td>&lt; 1 atraso · = 1 a tiempo · &gt; 1 adelanto</td></tr>
+        <tr><td>Estimación a la conclusión (EAC)</td><td><code>BAC / CPI</code></td><td>Costo final probable si la eficiencia de costo se mantiene</td></tr>
+        <tr><td>Estimación para completar (ETC)</td><td><code>EAC − AC</code></td><td>Lo que falta por gastar</td></tr>
+        <tr><td>Variación a la conclusión (VAC)</td><td><code>BAC − EAC</code></td><td>Sobrecosto (o ahorro) esperado al final</td></tr>
+        <tr><td>Índice de desempeño para completar (TCPI)</td><td><code>(BAC − EV) / (BAC − AC)</code></td><td>Eficiencia que se necesita de aquí en adelante para terminar en presupuesto</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Hay variantes del EAC según el supuesto. Si el atraso también va a encarecer lo que falta, se usa <code>EAC = AC + (BAC − EV) / (CPI × SPI)</code>. Si la desviación fue un evento aislado que no se repetirá, se usa <code>EAC = AC + (BAC − EV)</code>.</p>
+
+  <h2 id="ejemplo">5. Ejemplo: nave industrial de $12 millones</h2>
+  <p>Supongamos una nave industrial con presupuesto (BAC) de <strong>$12,000,000 MXN</strong>. En el corte del mes 5 se tienen estos datos (cifras ilustrativas):</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Dato</th><th>Valor</th><th>Origen</th></tr></thead>
+      <tbody>
+        <tr><td>PV</td><td class="num">$5,400,000</td><td>Programa de obra valuado (curva S)</td></tr>
+        <tr><td>EV</td><td class="num">$4,560,000</td><td>Volúmenes ejecutados × precio unitario de presupuesto (38% del total)</td></tr>
+        <tr><td>AC</td><td class="num">$5,100,000</td><td>Costos reales: nómina, materiales, maquinaria, subcontratos</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Indicador</th><th>Cálculo</th><th>Resultado</th></tr></thead>
+      <tbody>
+        <tr><td>CV</td><td>4,560,000 − 5,100,000</td><td class="num bad">−$540,000</td></tr>
+        <tr><td>SV</td><td>4,560,000 − 5,400,000</td><td class="num bad">−$840,000</td></tr>
+        <tr><td>CPI</td><td>4,560,000 / 5,100,000</td><td class="num bad">0.894</td></tr>
+        <tr><td>SPI</td><td>4,560,000 / 5,400,000</td><td class="num bad">0.844</td></tr>
+        <tr><td>EAC (BAC / CPI)</td><td>12,000,000 / 0.894</td><td class="num bad">$13,421,053</td></tr>
+        <tr><td>EAC (CPI × SPI)</td><td>5,100,000 + 7,440,000 / (0.894 × 0.844)</td><td class="num bad">$14,953,878</td></tr>
+        <tr><td>VAC</td><td>12,000,000 − 13,421,053</td><td class="num bad">−$1,421,053</td></tr>
+        <tr><td>TCPI</td><td>7,440,000 / 6,900,000</td><td class="num">1.078</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Interpretación.</strong> Por cada peso gastado se han producido 89 centavos de obra, y se avanza al 84% del ritmo programado. Si nada cambia, la nave costará alrededor de <strong>$13.4 millones</strong>, y hasta <strong>$15 millones</strong> si el atraso también encarece lo que falta. Para terminar en los $12 millones originales, el resto de la obra tendría que ejecutarse con un CPI de 1.078. Eso es casi 21% más eficiente que hasta ahora: difícil, pero no imposible si se ataca la causa.</p>
+  <div class="callout"><p><strong>Qué se hace con esto.</strong> Revisar qué conceptos concentran el sobrecosto (normalmente acero, concreto o renta de maquinaria ociosa), reprogramar frentes sobre la ruta crítica, renegociar o reasignar subcontratos y documentar las órdenes de cambio que el cliente debe reconocer. El valor ganado no corrige la obra, pero dice con números dónde mirar.</p></div>
+
+  <h2 id="kpis">6. KPIs operativos de obra</h2>
+  <p>CPI y SPI dicen <em>cuánto</em> se desvía el proyecto. Los KPIs operativos ayudan a explicar <em>por qué</em>:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>KPI</th><th>Cálculo</th><th>Referencia sana</th></tr></thead>
+      <tbody>
+        <tr><td>Porcentaje de plan cumplido (PPC)</td><td>Actividades semanales terminadas / comprometidas</td><td>&ge; 80%</td></tr>
+        <tr><td>Productividad de cuadrilla</td><td>Unidades instaladas / horas-hombre (ej. m² de losa por jornada)</td><td>Vs. rendimiento del análisis de precios</td></tr>
+        <tr><td>Utilización de maquinaria</td><td>Horas productivas / horas rentadas</td><td>&ge; 75%</td></tr>
+        <tr><td>Retrabajo</td><td>Costo de retrabajos / costo directo</td><td>&lt; 2%</td></tr>
+        <tr><td>No conformidades abiertas</td><td>Observaciones de calidad sin cerrar &gt; 7 días</td><td>Tendencia a cero</td></tr>
+        <tr><td>Órdenes de cambio</td><td>Monto de cambios aprobados / BAC</td><td>Controlado y documentado</td></tr>
+        <tr><td>Días de estimación a cobro</td><td>Fecha de pago − fecha de ingreso de estimación</td><td>Según contrato</td></tr>
+        <tr><td>Seguridad (TRIR)</td><td>Incidentes registrables × 200,000 / horas trabajadas</td><td>Lo más bajo posible; meta cero</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Las referencias son orientativas; cada empresa y cada tipo de obra deben fijar sus propias metas a partir de su histórico.</p>
+
+  <h2 id="tablero">7. Cómo armar el tablero de control</h2>
+  <p>Un buen tablero de obra tiene tres niveles:</p>
+  <ol class="plain">
+    <li><strong>Dirección (mensual):</strong> CPI, SPI, EAC, VAC, flujo de efectivo y top 5 de riesgos.</li>
+    <li><strong>Gerencia de proyecto (semanal):</strong> curva S (PV, EV, AC), PPC, órdenes de cambio, estimaciones pendientes de cobro.</li>
+    <li><strong>Campo (diario):</strong> avance por frente, productividad de cuadrillas, utilización de maquinaria, seguridad.</li>
+  </ol>
+  <p>La condición para que funcione es una sola: <strong>EV debe salir de volúmenes medidos, no de porcentajes estimados</strong>. Por eso el catálogo de conceptos y los generadores de obra son la base de todo el sistema de control.</p>
+
+  <h2 id="errores">8. Errores comunes</h2>
+  <ul class="plain">
+    <li>Medir el avance como “% gastado”. Eso es AC, no EV.</li>
+    <li>No tener línea base congelada. Sin PV fijo no hay contra qué comparar.</li>
+    <li>Mezclar órdenes de cambio con el presupuesto original sin control de versiones.</li>
+    <li>Revisar indicadores al final del proyecto, cuando ya no hay margen de corrección.</li>
+    <li>Reportar el SPI sin revisar la ruta crítica: un SPI de 1.0 puede esconder atraso en actividades críticas.</li>
+  </ul>
+
+  <div class="cta-box">
+    <h2>¿Tu obra necesita control de costos y plazos?</h2>
+    <p>En DICISA aplicamos gestión de proyectos con valor ganado en obra civil e industrial en Hermosillo, Guaymas y todo Sonora. Contamos con Registro REPSE vigente.</p>
+    <a class="btn" href="https://wa.me/525649470698?text=Hola%2C%20le%C3%AD%20el%20art%C3%ADculo%20de%20eficiencia%20de%20proyectos%20y%20me%20interesa%20hablar%20con%20DICISA" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+  </div>
+
+  <h2 id="referencias">Referencias</h2>
+  <ul class="plain refs">
+    <li>Project Management Institute. <em>A Guide to the Project Management Body of Knowledge (PMBOK® Guide) – Eighth Edition and The Standard for Project Management</em>. PMI, 2025. <a href="https://www.pmi.org/standards/pmbok" target="_blank" rel="noopener">pmi.org/standards/pmbok</a></li>
+    <li>Project Management Institute. <em>The Standard for Earned Value Management</em>. PMI, 2019.</li>
+    <li>Project Management Institute. <em>PMBOK® Guide – Seventh Edition</em>. PMI, 2021 (referencia comparativa).</li>
+  </ul>
+</main>
+
+<footer>
+  <span>&#169; 2026 DICISA &mdash; Hermosillo &amp; Guaymas, Sonora, México &middot; Registro REPSE</span>
+  <div class="links">
+    <a href="/">Inicio</a>
+    <a href="/eficiencia-energetica-industrial/">Eficiencia Energética</a>
+    <a href="/automatizacion-industrial-sonora/">Automatización</a>
+    <a href="/refrigeracion-industrial-inteligente/">Refrigeración</a>
+    <a href="/#contacto">Contacto</a>
+  </div>
+</footer>
+
+</body>
+</html>
